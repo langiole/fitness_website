@@ -10,11 +10,10 @@
             .parent{
                 display: flex;
                 flex-direction: row;
-                background-color: darkblue;
-                color: white;
             }
             .column{
                 flex: 1;
+                border: solid 3px;
             }
             
             .font{
@@ -22,56 +21,78 @@
                 margin: 10px;
             }
             .tableStyle{
+                background-color: gainsboro;
                 width: 100%;
                 border: solid 1px black;
                 font-size: 25px;
             }
+            td{
+                background-color: white;
+                border: solid 1px grey;
+            }
+            a{
+                text-decoration:none;
+                color: black;
+            }
         </style>
     </head>
-    <body>
+    
+    <header>
+            <center><a href= "../../home.html"><img src="../../assets/logo.png" alt="logo" style="width:150px;height:150px;"></a></center>
+    </header>
+    
+    <body style= "font-family: sans-serif">
         
-        <h1 style="text-align: center; border: solid 2px black">Bench Press</h1>
+        <div style="text-align: right; ">
+            <form> <input style="width: 250px; height: 25px; font-size: 25px; border: solid 2px" type="text" placeholder="search workout" value="">   </form>
+        </div>
+        
+        <h1 style="text-align: center; ">Bench Press</h1>
         
         <div class="parent">
             <div class="column">
                 <h2 style="text-align: center"> Description</h2>
                 <p class="font">Lie flat on the bench, Lift the bar out of the rack straight above your chest with arms locked. Come down slowly until the bar touches the middle of your chest. After a brief pause push the bar straight up while breathing out.</p>
             </div>
-            
-            <div class="column" style="text-align: right">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/gRVjAtPip0Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div style="width: 5%"></div>
+            <div class="column" style="text-align: center; height: 400px">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gRVjAtPip0Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
-        <p style="padding-top: 5%"></p>
-        <div>
-            <h2 style="text-align: center">Chest exercises</h2>
+        
+        <p style="padding-top: 2%"></p>
+        
+        <div>    
+            <center><img src="../../assets/chest.png" alt="logo" style="width:100px;height:100px;"></center>
+            <h2 style="text-align: center">Chest Exercises</h2>
             <table class="tableStyle">
                 <tr>
-                    <td>dumbells bench press</td>
-                    <td>dumbells flies</td>
-                    <td>Exercise</td>
-                    <td>Exercise</td>
-                    <td>Exercise</td>
+                    <td><a href="#">dumbells bench press</a></td>
+                    <td><a href="#">dumbells flies</a></td>
+                    <td><a href="#">Exercise</a></td>
+                    <td><a href="#">Exercise</a></td>
+                    <td><a href="#">Exercise</a></td>
                 </tr>
                 <tr>
-                    <td>Exercise</td>
-                    <td>Exercise</td>
-                    <td>Exercise</td>
-                    <td>Exercise</td>
-                    <td>Exercise</td>
+                    <td><a href="#">Exercise</a></td>
+                    <td><a href="#">Exercise</a></td>
+                    <td><a href="#">Exercise</a></td>
+                    <td><a href="#">Exercise</a></td>
+                    <td><a href="#">Exercise</a></td>
+                    
                 </tr>
                 <tr>
-                    <td>Exercise</td>
-                    <td>Exercise</td>
-                    <td>Exercise</td>
-                    <td>Exercise</td>
-                    <td>Exercise</td>
+                    <td><a href="#">Exercise</a></td>
+                    <td><a href="#">Exercise</a></td>
+                    <td><a href="#">Exercise</a></td>
+                    <td><a href="#">Exercise</a></td>
+                    <td><a href="#">Exercise</a></td>
                 </tr><tr>
-                    <td>Exercise</td>
-                    <td>Exercise</td>
-                    <td>Exercise</td>
-                    <td>Exercise</td>
-                    <td>Exercise</td>
+                    <td><a href="#">Exercise</a></td>
+                    <td><a href="#">Exercise</a></td>
+                    <td><a href="#">Exercise</a></td>
+                    <td><a href="#">Exercise</a></td>
+                    <td><a href="#">Exercise</a></td>
                 </tr>
             </table>
         </div>
