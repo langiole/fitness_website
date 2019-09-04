@@ -5,10 +5,16 @@ function CheckMember()
 {
     
     var name = document.forms["RegForm"]["username"];
-    
+     var pasname = document.forms["RegForm"]["Pasword"];
         if(name.value == "")
             {
         window.alert("Please enter your name."); 
+        name.focus(); 
+        return false; 
+            }
+        if(pasname.value == "")
+            {
+        window.alert("Please enter your password."); 
         name.focus(); 
         return false; 
             }
@@ -30,7 +36,7 @@ function CheckMember()
 <center> <input type="text" name="Pasword"> </center><br>
 <p>&nbsp;</p>
 
- <center><input type="submit"  name="Submit" value="Sighn in" ></center>
+ <center><input type="submit"  name="Submit" id = "btn" value="Sighn in" ></center>
 </form>
 
 
