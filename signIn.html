@@ -20,26 +20,32 @@ function CheckMember()
             }
       
     }
-</script>    
-<header>
-<body>
+</script>  
     
+<header>
+<style>
+div.a
+    {
+        line-height: 50%;
+    }
+</style>
+<body>
+   
 
-<body bgcolor="skyblue">
+
 <center><a href= "home.html"><img src="C:\Users\heros\Desktop\htmlget\trunk\assets\logo.png" alt="our logo" style="width:150px;height:150px;"></center></a>   
 </header>
 <p>&nbsp;</p>	
-<p>&nbsp;</p>	
+<div class="a">   
 <form name="RegForm" action="/submit.php" onsubmit="return CheckMember()" method="post">
-<b><center><p style="font-size:25px;" style="font-family: sans-serif">User Name</p></center></b>
-<center><input type="text" name="username" placeholder="UserName"></center><br>
-<b><center><p style="font-size:25px;" style="font-family: sans-serif">Password</p></center></b>
-<center> <input type="password" name="Pasword" placeholder="Password"> </center><br>
+<b><center><p style="font-size:25px;font-family: sans-serif;">Username</p></center></b>
+<center><input type="text" name="username" style="width: 225px; padding-top: 8px;padding-bottom: 8px; border-radius: 5px; border: 1px solid;" placeholder="       Username"></center><br>
+<b><center><p style="font-size:25px;font-family: sans-serif; " >Password</p>
+<center> <input type="password" name="Pasword" style="width: 225px; padding-top: 8px;padding-bottom: 8px; border-radius: 5px; border: 1px solid;" placeholder="       Password"> </center><br>
 <p>&nbsp;</p>
-
- <center><input type="submit"  name="Submit"style="width:150px; height:50px;"  value="sign in" ></center>
+ <center><input type="submit"  name="Submit"style="width:150px; height:50px;border-radius: 5px; border: 1px solid; "  value="Sign In"></center>
 </form>
 
-
+</div> 
 </body>
 </html>
