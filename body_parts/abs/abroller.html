@@ -7,6 +7,20 @@
         <title>Ab Roller</title>
         <meta name="description" content="Ab Roller workout">
         <style>
+            body{
+                font-family: sans-serif;
+            }
+            body h1{
+                text-align: center;
+            }
+            form input{
+                width: 250px; 
+                height: 25px; 
+                font-size: 25px; 
+                border: solid 2px;
+            }
+            /*-------------------------*/
+            /* description block and iframe block flex styling*/
             .parent{
                 display: flex;
                 flex-direction: row;
@@ -15,11 +29,19 @@
                 flex: 1;
                 border: solid 3px;
             }
-            
-            .font{
+            #iframeBlock{
+                text-align: center; 
+                height: 400px;
+            }
+            .column h2{
+                text-align: center;
+            }
+            .column p{
                 font-size:25px;
                 margin: 10px;
             }
+            /*-------------------------*/
+            
             .tableStyle{
                 background-color: black;
                 width: 100%;
@@ -45,30 +67,37 @@
             <center><a href= "../../home.html"><img src="../../assets/logo.png" alt="logo" style="width:150px;height:150px;"></a></center>
     </header>
     
-    <body style= "font-family: sans-serif">
+    <body>
         
         <div style="text-align: right; ">
-            <form> <input style="width: 250px; height: 25px; font-size: 25px; border: solid 2px" type="text" placeholder="search workout" value="">   </form>
+            <form> <input type="text" placeholder="search workout" value="">   </form>
         </div>
         
-        <h1 style="text-align: center; ">Ab Roller</h1>
+        <h1>Ab Roller</h1>
         
+        <!------------------------->
         <div class="parent">
             <div class="column">
-                <h2 style="text-align: center"> Description</h2>
-                <p class="font">Hold the Ab Roller wheel on the floor with both hands as you kneel and have your back straight. Push the Ab Roller forward while your core stretches as you get lower. After a pause, roll the wheel back towards you as you end up in the starting position.</p>
+                <h2> Description</h2>
+                <p>Hold the Ab Roller wheel on the floor with both hands as you kneel and have your back straight. Push the Ab Roller forward while your core stretches as you get lower. After a pause, roll the wheel back towards you as you end up in the starting position.</p>
             </div>
+            
             <div style="width: 5%"></div>
-            <div class="column" style="text-align: center; height: 400px">
+            
+            <div class="column"  id="iframeBlock">
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/A3uK5TPzHq8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
+        <!------------------------->
         
         <p style="padding-top: 2%"></p>
         
         <div>    
             <center><img src="../../assets/abs.png" alt="logo" style="width:100px;height:100px;"></center>
+            
             <h2 style="text-align: center">Ab Exercises</h2>
+            
+            <!------------------------->
             <table class="tableStyle">
                 <tr>
                     <td><a href="#">air bike</a></td>
@@ -99,6 +128,7 @@
                     <td><a href="#">Exercise</a></td>
                 </tr>
             </table>
+            <!------------------------->
         </div>
         
         
