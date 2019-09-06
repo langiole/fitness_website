@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    
+    <header>
+        
+        <center><a href= "home.html"><img src="assets/logo.png" alt="logo" style="width:150px;height:150px;"></a></center>
+        
+        <div style="position: relative; bottom: 150px; text-align: right; padding-right: 10px">
+            <a href=sign_in.html style="text-decoration: none"><p style="font-family: sans-serif">SIGN IN</p></a>
+        </div>
+        
+    </header>
+    
+    
+    <body>
+        <center style="padding-top: 25px"><h3 style="font-family: sans-serif">BODY PARTS</h3>
+        <table style="width:100%; padding-left: 50px; padding-right: 50px">
+            <tr>
+                <td align="center">
+                    <a href= "body_parts/abs/index.html"><img src="assets/abs.png" alt="logo" style="width:100px;height:100px;" onmouseover="mouseOver('ABS')" onmouseout="mouseOut('')"></a>
+                </td>
+                <td align="center">
+                    <a href= "body_parts/arms/index.html"><img src="assets/arms.png" alt="logo" style="width:100px;height:100px;" onmouseover="mouseOver('ARMS')" onmouseout="mouseOut('')"></a>
+                </td>
+                <td align="center">
+                    <a href= "body_parts/back/index.html"><img src="assets/back.png" alt="logo" style="width:100px;height:100px;" onmouseover="mouseOver('BACK')" onmouseout="mouseOut('')"></a>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <a href= "body_parts/chest/index.html"><img src="assets/chest.png" alt="logo" style="width:100px;height:100px;" onmouseover="mouseOver('CHEST')" onmouseout="mouseOut('')"></a>
+                </td>
+                
+                <td align="center">
+                    <a href= "body_parts/legs/index.html"><img src="assets/legs.png" alt="logo" style="width:100px;height:100px;" onmouseover="mouseOver('LEGS')" onmouseout="mouseOut('')"></a>
+                </td>
+            </tr>
+        </table>
+            
+            
+        <p id="bodyPart" style="font-family:sans-serif"></p>
+            
+        <script>
+            function mouseOver(bodyPart) {
+                document.getElementById("bodyPart").innerHTML = bodyPart;
+            }
+            function mouseOut(bodyPart) {
+                document.getElementById("bodyPart").innerHTML = bodyPart;
+            }
+        </script>
+            
+            
+            
+        </center>
+    </body>
+</html>
