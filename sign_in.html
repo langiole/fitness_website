@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles/sign_in.css"> 
+</head>
 <script>
 function CheckMember()
-{   
-    var name = document.forms["RegForm"]["username"];
-    var pasname = document.forms["RegForm"]["Pasword"];
-    if(name.value == "") {
-        window.alert("Please enter your name."); 
-        name.focus(); 
-        return false; 
-    }
-    if(pasname.value == "") {
-        window.alert("Please enter your password."); 
-        name.focus(); 
-        return false; 
-    }
-}
-</script>  
+{
     
-<header>
-    <style>
-        div.a
-        {
-            line-height: 50%;
+    var name = document.forms["RegForm"]["username"];
+     var pasname = document.forms["RegForm"]["Pasword"];
+        if(name.value == "") {
+            window.alert("Please enter your name."); 
+            name.focus(); 
+            return false; 
         }
+        if(pasname.value == "") {
+            window.alert("Please enter your password."); 
+            name.focus(); 
+            return false; 
+        }
+    }
+</script>  
+  <style>
+      
     </style>
-    <center><a href= "home.html"><img src="assets/logo.png" alt="our logo" style="width:150px;height:150px;"></a></center>
+<header>
+   
+<a href= "home.html"><img class="sty" src="assets/logo.png" alt="our logo"></a>  
 </header>
     
 <body>
         
-<p>&nbsp;</p>
+<br>
         
-<center><p style="font-size:25px;font-family: sans-serif;">Username</p></center>
+<p class = "word">Username</p>
         
 <form name="RegForm" action="home.html" onsubmit="return CheckMember()" method="get">
-    
-<center><input type="text" name="username" maxlength="10"; style="width: 220px; padding-top: 8px;padding-bottom: 8px; padding-left: 8px; border-radius: 5px; border: 1px solid;" placeholder="Username"></center>
+<input class = "shape" type="text" name="username" maxlength="10";  placeholder="Username"{text-align: center;}>
         
 <br>
         
-<center><p style="font-size:25px;font-family: sans-serif;">Password</p></center>
+<p class = "word" >Password</p>
     
-<center> <input type="password" name="Pasword" maxlength="10"; style="width: 220px; padding-top: 8px;padding-bottom: 8px; padding-left: 8px; border-radius: 5px; border: 1px solid;" placeholder="Password"></center>
+<input class = "shape" type="password" name="Pasword" maxlength="10";  placeholder="Password">
         
-<p>&nbsp;</p>
+<br>
         
-<center><input type="submit"  name="Submit"style="width:150px; height:50px; border-radius: 5px; border: 0px solid; background-color: lightgrey;" value="Sign In"></center>
+<input class = "sub" type="submit"  name="Submit" value="Sign In">
 </form>
 </body>
 </html>
