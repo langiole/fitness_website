@@ -47,6 +47,18 @@
               top: 70%;
             
 }
+            .tableStyle{
+                background-color: black;
+                width: 100%;
+                font-size: 17px;
+            }
+            td{
+                background-color: white;
+                padding-left: 1%;
+            }
+            td:hover{
+                background-color: darkgrey;
+            }
             td a{
                 width: 100%;
                 display: inline-block;
