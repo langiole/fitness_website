@@ -36,10 +36,10 @@ p.word
     {
     font-Size: 25px;
     font-family: sans-serif;
-    text-align: center;
+    
     }
 
-button.upd
+input.sub
 {
    width:150px; 
     height:50px;
@@ -51,11 +51,33 @@ button.upd
   margin-left: auto;
   margin-right: auto;
     color: gray;
+    outline: none;
 }
 
-button.upd:hover
+input.sub:hover
 {
    background-color: gray; 
+    color: white;
+}
+
+button.del
+{
+   width:150px; 
+    height:50px;
+    border-radius: 25px; 
+    border: 1.5px solid; 
+    display: block;
+    background-color: white;
+    border-color: red;
+  margin-left: auto;
+  margin-right: auto;
+    color: red;
+    outline: none;
+}
+
+button.del:hover
+{
+   background-color: red; 
     color: white;
 }
 
@@ -109,16 +131,4 @@ div.content {
   }
 }
 
-input.sub
-{
-   width:150px; 
-    height:50px;
-    border-radius: 25px; 
-    border: 1.5px solid; 
-    display: block;
-    background-color: white;
-    border-color: gray;
-  margin-left: auto;
-  margin-right: auto;
-    color: gray;
-}
+

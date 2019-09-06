@@ -46,6 +46,7 @@ input.sub
   margin-left: auto;
   margin-right: auto;
     color: gray;
+    outline: none;
 }
 
 input.sub:hover

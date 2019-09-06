@@ -1,14 +1,12 @@
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="User_Page.css">
+        <link rel="stylesheet" type="text/css" href="styles/User_Page.css">
     </head>
         
 <script>
 function CheckMember()
 {
-    
     var mail = document.forms["RegForm"]["Email"];
-    
         if (mail.value == "" )                                   
     { 
         window.alert("Please enter a valid e-mail address."); 
@@ -29,6 +27,13 @@ function CheckMember()
         mail.focus(); 
         return false; 
     } 
+    
+
+    }
+    
+    function PresentWaring()
+    {
+        confirm("are you shure you wish to delete your acount");
     }
 </script>  
     
@@ -40,12 +45,16 @@ function CheckMember()
     <body>
  <center>  <a href= "home.html"><img class="sty" src="assets/logo.png" alt="our logo"></a>  </center>
 <form name="RegForm" action="home.html" onsubmit="return CheckMember()" method="get">
-<p class = "word">Email</p>
+<p class = "word"> &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;   &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Email</p>
     
 <input class = "shape" type="email" name="Email"  placeholder="Email">
     <br>
     <br>   
-<input class = "sub" type="submit"  name="updat" value="Update info">    
+<input class = "sub" type="submit"  name="updat" value="Update info">  
+    <br>
+    <hr>
+    <br>   
+<button class = "del" type="button" onclick="PresentWaring()">Delete your acount</button>   
 </form>
     </body>
 </html>
