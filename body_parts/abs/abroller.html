@@ -6,70 +6,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Ab Roller</title>
         <meta name="description" content="Ab Roller workout">
-        <style>
-            body{
-                font-family: sans-serif;
-            }
-            body h1{
-                text-align: center;
-            }
-            form input{
-                width: 250px; 
-                height: 25px; 
-                font-size: 25px; 
-                border: solid 2px;
-            }
-            /*-------------------------*/
-            /* description block and iframe block flex styling*/
-            .parent{
-                display: flex;
-                flex-direction: row;
-            }
-            .column{
-                flex: 1;
-                border: solid 3px;
-            }
-            #iframeBlock{
-                text-align: center; 
-                height: 400px;
-            }
-            .column h2{
-                text-align: center;
-            }
-            .column p{
-                font-size:25px;
-                margin: 10px;
-            }
-            /*-------------------------*/
-            
-            .tableStyle{
-                background-color: black;
-                width: 100%;
-                font-size: 25px;
-            }
-            td{
-                background-color: white;
-                padding-left: 1%;
-            }
-            td:hover{
-                background-color: darkgrey;
-            }
-            td a{
-                width: 100%;
-                display: inline-block;
-                text-decoration:none;
-                color: black;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="../../styles/workout_specific.css">
     </head>
     
     <header>
-            <center><a href= "../../home.html"><img src="../../assets/logo.png" alt="logo" style="width:150px;height:150px;"></a></center>
+            <center><a href= "../../home.html"><img class="logo" src="../../assets/logo.png" alt="logo" ></a></center>
     </header>
     
     <body>
         
-        <div style="text-align: right; ">
+        <div class="formWrapper">
             <form> <input type="text" placeholder="search workout" value="">   </form>
         </div>
         
@@ -84,7 +30,7 @@
             
             <div style="width: 5%"></div>
             
-            <div class="column"  id="iframeBlock">
+            <div class="column iframeWrapper"  id="iframeBlock">
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/A3uK5TPzHq8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
@@ -93,7 +39,7 @@
         <p style="padding-top: 2%"></p>
         
         <div>    
-            <center><img src="../../assets/abs.png" alt="logo" style="width:100px;height:100px;"></center>
+            <center><img src="../../assets/abs.png" alt="logo" class="bodyImg"></center>
             
             <h2 style="text-align: center">Ab Exercises</h2>
             

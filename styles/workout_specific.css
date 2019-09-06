@@ -1,0 +1,63 @@
+            .logo{
+                width:150px;
+                height:150px;
+            }
+            body{
+                font-family: sans-serif;
+            }
+            body h1{
+                text-align: center;
+            }
+            .formWrapper{
+                text-align: right;
+            }
+            form input{
+                width: 250px; 
+                height: 25px; 
+                font-size: 25px; 
+                border: solid 2px;
+            }
+            /*-------------------------*/
+            /* description block and iframe block flex styling*/
+            .parent{
+                display: flex;
+                flex-direction: row;
+            }
+            .column{
+                flex: 1;
+                border: solid 3px;
+            }
+            .iframeWrapper{
+                text-align: center; 
+                height: 400px;
+            }
+            .column h2{
+                text-align: center;
+            }
+            .column p{
+                font-size:25px;
+                margin: 10px;
+            }
+            /*-------------------------*/
+            .bodyImg{
+                width:100px;
+                height:100px;
+            }
+            .tableStyle{
+                background-color: black;
+                width: 100%;
+                font-size: 25px;
+            }
+            td{
+                background-color: white;
+                padding-left: 1%;
+            }
+            td:hover{
+                background-color: darkgrey;
+            }
+            td a{
+                width: 100%;
+                display: inline-block;
+                text-decoration:none;
+                color: black;
+            }
