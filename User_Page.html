@@ -33,8 +33,21 @@ function CheckMember()
     
     function PresentWaring()
     {
-        confirm("are you shure you wish to delete your acount");
+       
+    if (!confirm("are you shure you wish to delete your acount ?")) 
+        {
+            alert("acount deletion cancel");
+        }
+       
+    else
+        {
+            alert(" acount deletion confirmed");
+        }
+        
     }
+    
+    
+    
 </script>  
     
     <div class = "sidebar">
@@ -48,7 +61,7 @@ function CheckMember()
       <br>
 <p class = "word" > Email</p>
     
-<input class = "shape" type="email" name="Email" placeholder="Email">
+<input class = "shape" type="email" id = "EBox" name="Email" placeholder="Email">
     <br>
     <br>   
 <input class = "sub" type="submit"  name="updat" value="Update info">  
