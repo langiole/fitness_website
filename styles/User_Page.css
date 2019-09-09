@@ -36,7 +36,9 @@ p.word
     {
     font-Size: 25px;
     font-family: sans-serif;
-    
+    text-align: center;
+    position: relative; 
+    right: 80px; 
     }
 
 input.sub
@@ -130,5 +132,7 @@ div.content {
     float: none;
   }
 }
+
+
 
 
