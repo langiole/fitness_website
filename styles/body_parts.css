@@ -1,0 +1,68 @@
+ .main-container {
+         float: left;
+         position: relative;
+         left: 50%;
+         }
+         .fixer-container {
+         float: left;
+         position: relative;
+         left: 7%;
+         }
+         .forh {
+         /*      float: left;*/
+         position: relative;
+         left: 45%;
+         }
+          
+           .forhh {
+         /*      float: left;*/
+         position: absolute;
+         left: 5%;
+         top:1%;
+         }
+          
+          .titl {
+         /*      float: left;*/
+         position: absolute;
+         left: 15%;
+         top:7%;
+         }
+          
+          .abbs {
+         /*      float: left;*/
+         position: absolute;
+         left: 46%;
+         top:9%;
+         }
+          .mdl-textfield{
+    width:500px;
+           left: -11%;
+}
+          
+          .bttn{
+              
+              position: absolute;
+    
+           left: -13%;
+              top: 70%;
+            
+}
+            .tableStyle{
+                background-color: black;
+                width: 100%;
+                font-size: 17px;
+            }
+            td{
+                background-color: white;
+                padding-left: 1%;
+            }
+            td:hover{
+                background-color: darkgrey;
+            }
+            td a{
+                width: 100%;
+                display: inline-block;
+                text-decoration:none;
+                color: black;
+            }
+          
