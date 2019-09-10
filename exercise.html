@@ -4,10 +4,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ab Roller</title>
-        <meta name="description" content="Ab Roller workout">
+        <title>Exercise</title>
+        <meta name="description" content="Exercise page">
         <link rel="stylesheet" type="text/css" href="css/workout_specific.css">
         <script src="https://kit.fontawesome.com/8ff1d0c51f.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     
     <header>
@@ -16,31 +17,31 @@
     
     <body>
         
-        <h1>Ab Roller</h1>
+        <h1 id=exerciseTitle>Ab Roller</h1>
         
         <!------------------------->
         <div class="parent">
             <div class="column">
                 <h2 id=Descrp-header> Description</h2>
-                <p>Hold the Ab Roller wheel on the floor with both hands as you kneel and have your back straight. Push the Ab Roller forward while your core stretches as you get lower. After a pause, roll the wheel back towards you as you end up in the starting position.</p>
+                <p id=descrp>Hold the Ab Roller wheel on the floor with both hands as you kneel and have your back straight. Push the Ab Roller forward while your core stretches as you get lower. After a pause, roll the wheel back towards you as you end up in the starting position.</p>
             </div>
             
             <div style="width: 5%"></div>
             
             <div class="column iframeWrapper"  id="iframeBlock">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/A3uK5TPzHq8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="yt_video" width="100%" height="100%" src="https://www.youtube.com/embed/A3uK5TPzHq8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <!------------------------->
         <p style="padding-top: 2px"></p>
-        <button type="button" onclick="stateOfMore()" class="moreButton"><span id=buttonText>Show more abs exercises
+        <button type="button" onclick="moreButtonState()" class="moreButton"><span id=buttonText>Show more abs exercises
             </span></button>
         <p style="padding-top: 3px"></p>
         
         <div id="moreExercises">    
             <center><img src="images/abs.png" alt="logo" class="bodyImg"></center>
             
-            <h2 class="tableTitle">Ab Exercises</h2>
+            <h2 class="tableTitle" id="tableTitleId">Ab Exercises</h2>
             <center>
                 <form> 
                     <div class="input-icons">
@@ -52,7 +53,8 @@
                 
             </center>
             <!------------------------->
-            <table class="tableStyle">
+            <table class="tableStyle" id="exerTable">
+                <!--
                 <tr>
                     <td><a href="#">air bike</a></td>
                     <td><a href="#">cable crunch</a></td>
@@ -60,50 +62,13 @@
                     <td><a href="#">Exercise</a></td>
                     <td><a href="#">Exercise</a></td>
                 </tr>
-                <tr>
-                    <td><a href="#">Exercise</a></td>
-                    <td><a href="#">Exercise</a></td>
-                    <td><a href="#">Exercise</a></td>
-                    <td><a href="#">Exercise</a></td>
-                    <td><a href="#">Exercise</a></td>
-                    
-                </tr>
-                <tr>
-                    <td><a href="#">Exercise</a></td>
-                    <td><a href="#">Exercise</a></td>
-                    <td><a href="#">Exercise</a></td>
-                    <td><a href="#">Exercise</a></td>
-                    <td><a href="#">Exercise</a></td>
-                </tr><tr>
-                    <td><a href="#">Exercise</a></td>
-                    <td><a href="#">Exercise</a></td>
-                    <td><a href="#">Exercise</a></td>
-                    <td><a href="#">Exercise</a></td>
-                    <td><a href="#">Exercise</a></td>
-                </tr>
+            -->
             </table>
             <!------------------------->
         </div>
         
-        <script>
-        function stateOfMore()
-        {
-            
-           let element = document.querySelector("#moreExercises");
-            let currDisplay=getComputedStyle(element).display;
-           
-    
-            if(currDisplay === "block"){
-            document.getElementById("moreExercises").style.display = "none";
-            document.getElementById("buttonText").innerHTML="Show more abs exercises";
-                
-           }
-            else if(currDisplay === "none"){
-                document.getElementById("moreExercises").style.display = "block";
-                document.getElementById("buttonText").innerHTML="hide exercises";
-            }
-        }
-        </script>
+        <script src="./scripts/moreButtonState.js" ></script>
+        <script src="./scripts/jsonLoader.js"></script>
     </body>
 </html>
 
