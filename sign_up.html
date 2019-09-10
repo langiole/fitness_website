@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/sign_up.css">
+</head>
+<header>
+    <center><a href= "home.html"><img id="logo" src="assets/logo.png" alt="logo"></a></center>
+</header>
+<body>
+<div style="margin-top: 10%" class="contain">
+    <div class="wrapper">
+        <div class="form">
+            <h2 align=center>Sign Up</h2>
+            <form action="home.html">
+                <p><input type="text" name="firstname" placeholder="First Name"></p>
+                
+                <p><input name="lastname" type="text" placeholder="Last Name"></p>
+                <p class="full-width"><input type="text" name="email" placeholder="Email"></p>
+                <p class="full-width"><input id="pword" onkeyup="pwordMatch()" type="password" name="pword" placeholder="Password"></p>
+                <p class="full-width"><input id="cpword" onkeyup="pwordMatch()" type="password" name="cpword" placeholder="Confirm Password"></p>
+                
+                <p class="full-width"><input type="checkbox" id="policy" name="policy">
+                <label style="font-size: 10px; color: gray; position: relative; text-align: center; bottom: 15px; right: 40px" for="policy">I accept the Terms of Use & Privacy Policy</label>
+                </p>
+                
+                <p class="full-width"><input type="submit" value="Submit"></p>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+var password = document.getElementById("pword")
+var confirmPassword = document.getElementById("cpword")
+function pwordMatch() {
+    if (confirmPassword.value == "") {
+       document.getElementById("cpword").style.border = "1px solid #ccc" 
+    }
+    else if(password.value == confirmPassword.value) { 
+        document.getElementById("cpword").style.border = "1.4px solid green"
+    }
+    else {
+        document.getElementById("cpword").style.border = "1.4px solid red"
+    }
+}
+</script>
+    
+    
+</html>
