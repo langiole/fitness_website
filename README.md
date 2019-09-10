@@ -1,7 +1,11 @@
 
 # Notices
 
-" A recent pull request has made important updates to the master branch, please update your own branches before merging your branch with the master to prevent possible issues."
+" mslckr will be seeking some tutoring help, potentially unavailable wednessday."
+
+# Important
+
+" ALL PULL REQUESTS TO THE MASTER BRANCH NEEDS TO HAVE BEEN UPDATED TO REQUEST 20+ IN ORDER TO PREVENT FURTHER ISSUES INVOLVING DIRECTORY REFERENCING."
 
 # Objective
 
