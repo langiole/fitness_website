@@ -41,7 +41,7 @@ p.word
     right: 80px; 
     }
 
-input.sub
+button.sub
 {
    width:150px; 
     height:50px;
@@ -56,7 +56,7 @@ input.sub
     outline: none;
 }
 
-input.sub:hover
+button.sub:hover
 {
    background-color: gray; 
     color: white;
