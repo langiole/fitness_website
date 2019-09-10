@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles/User_Page.css">
+    </head>
+        
+<script>
+function CheckMember()
+{
+    var mail = document.forms["RegForm"]["Email"];
+        if (mail.value == "" )                                   
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        mail.focus(); 
+        return false; 
+    } 
+   
+    if (mail.value.indexOf("@", 0) < 0)                 
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        mail.focus(); 
+        return false; 
+    } 
+   
+    if (mail.value.indexOf(".", 0) < 0)                 
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        mail.focus(); 
+        return false; 
+    } 
+    
+
+    }
+    
+    function PresentWaring()
+    {
+       
+    if (!confirm("are you shure you wish to delete your acount ?")) 
+        {
+            alert("acount deletion cancel");
+        }
+       
+    else
+        {
+            alert(" acount deletion confirmed");
+        }
+        
+    }
+    
+    
+    
+</script>  
+    
+    <div class = "sidebar">
+  <a class="active" href="#Contact_Info">Contact Info</a>
+  <a href="#saved_workouts">Saved Workouts</a>
+    </div>    
+    
+    <body>
+ <center>  <a href= "home.html"><img class="sty" src="assets/logo.png" alt="our logo"></a>  </center>
+<form name="RegForm" action="home.html" onsubmit="return CheckMember()" method="get">
+      <br>
+<p class = "word" > Email</p>
+    
+<input class = "shape" type="email" id = "EBox" name="Email" placeholder="Email">
+    <br>
+    <br>   
+<input class = "sub" type="submit"  name="updat" value="Update info">  
+    <br>
+    <hr>
+    <br>   
+<button class="del" type="button" onclick="PresentWaring()">Delete your acount</button>   
+</form>
+        
+    </body>
+</html>
+    
+   
+    
+    

@@ -6,97 +6,51 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Ab Roller</title>
         <meta name="description" content="Ab Roller workout">
-        <style>
-            body{
-                font-family: sans-serif;
-            }
-            body h1{
-                text-align: center;
-            }
-            form input{
-                width: 250px; 
-                height: 25px; 
-                font-size: 25px; 
-                border: solid 2px;
-            }
-            /*-------------------------*/
-            /* description block and iframe block flex styling*/
-            .parent{
-                display: flex;
-                flex-direction: row;
-            }
-            .column{
-                flex: 1;
-                border: solid 3px;
-            }
-            #iframeBlock{
-                text-align: center; 
-                height: 400px;
-            }
-            .column h2{
-                text-align: center;
-            }
-            .column p{
-                font-size:25px;
-                margin: 10px;
-            }
-            /*-------------------------*/
-            
-            .tableStyle{
-                background-color: black;
-                width: 100%;
-                font-size: 25px;
-            }
-            td{
-                background-color: white;
-                padding-left: 1%;
-            }
-            td:hover{
-                background-color: darkgrey;
-            }
-            td a{
-                width: 100%;
-                display: inline-block;
-                text-decoration:none;
-                color: black;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="../../styles/workout_specific.css">
+        <script src="https://kit.fontawesome.com/8ff1d0c51f.js"></script>
     </head>
     
     <header>
-            <center><a href= "../../home.html"><img src="../../assets/logo.png" alt="logo" style="width:150px;height:150px;"></a></center>
+            <center><a href= "../../home.html"><img class="logo" src="../../assets/logo.png" alt="logo" ></a></center>
     </header>
     
     <body>
-        
-        <div style="text-align: right; ">
-            <form> <input type="text" placeholder="search workout" value="">   </form>
-        </div>
         
         <h1>Ab Roller</h1>
         
         <!------------------------->
         <div class="parent">
             <div class="column">
-                <h2> Description</h2>
+                <h2 id=Descrp-header> Description</h2>
                 <p>Hold the Ab Roller wheel on the floor with both hands as you kneel and have your back straight. Push the Ab Roller forward while your core stretches as you get lower. After a pause, roll the wheel back towards you as you end up in the starting position.</p>
             </div>
             
             <div style="width: 5%"></div>
             
-            <div class="column"  id="iframeBlock">
+            <div class="column iframeWrapper"  id="iframeBlock">
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/A3uK5TPzHq8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <!------------------------->
+        <p style="padding-top: 2px"></p>
+        <button type="button" onclick="stateOfMore()" class="moreButton"><span id=buttonText>Show more abs exercises
+            </span></button>
+        <p style="padding-top: 3px"></p>
         
-        <p style="padding-top: 2%"></p>
-        
-        <div>    
-            <center><img src="../../assets/abs.png" alt="logo" style="width:100px;height:100px;"></center>
+        <div id="moreExercises">    
+            <center><img src="../../assets/abs.png" alt="logo" class="bodyImg"></center>
             
-            <h2 style="text-align: center">Ab Exercises</h2>
+            <h2 class="tableTitle">Ab Exercises</h2>
+            <center>
+                <form> 
+                    <div class="input-icons">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" placeholder="search workout" value="">
+                    </div>
             
+                </form>
+                
+            </center>
             <!------------------------->
             <table class="tableStyle">
                 <tr>
@@ -131,7 +85,25 @@
             <!------------------------->
         </div>
         
-        
+        <script>
+        function stateOfMore()
+        {
+            
+           let element = document.querySelector("#moreExercises");
+            let currDisplay=getComputedStyle(element).display;
+           
+    
+            if(currDisplay === "block"){
+            document.getElementById("moreExercises").style.display = "none";
+            document.getElementById("buttonText").innerHTML="Show more abs exercises";
+                
+           }
+            else if(currDisplay === "none"){
+                document.getElementById("moreExercises").style.display = "block";
+                document.getElementById("buttonText").innerHTML="hide exercises";
+            }
+        }
+        </script>
     </body>
 </html>
 
