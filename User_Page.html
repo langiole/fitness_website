@@ -14,14 +14,27 @@
  <center>  <a href= "home.html"><img class="sty" src="images/logo.png" alt="our logo"></a>  </center>
 <form name="RegForm" action="home.html" onsubmit="return CheckMember()" method="get">
       <br>
-<p class = "word" >Old Email</p>
+<p class = "wordN" > First Name</p>
     
-<input class = "shape" type="email" id = "OEBox" value = "">
+<input class = "shape" type="text" id = "first"  placeholder="First" value = "">
     <br>
     <br>   
-    <p class = "word" >New Email</p>
+    <p class = "wordN" > Last Name</p>
+    
+<input class = "shape" type="text" id = "last" placeholder="Last" value = "">
+    <br>
+    <br>  
+    <p class = "wordE" >Email</p>
     
 <input class = "shape" type="email" id = "NEBox"  placeholder="Email" value = "" >
+    <br>
+    <br> 
+    <p class = "wordNP" >New Password</p>
+    <input class = "shape" type="password" id = "NPass"  placeholder="password" value = "" >
+    <br>
+    <br> 
+    <p class = "wordCP" >Confirm Password</p>
+    <input class = "shape" type="password" id = "Opass"  onkeyup="conpassvalid()" placeholder="Password" value = "">
     <br>
     <br> 
     <button class = "sub" type="button" onclick="CheckMember();"  >Update info</button>  

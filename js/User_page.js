@@ -1,48 +1,89 @@
+var currFName = "henderson";
+var currLName = "burgus";
 var currEmail = "mail@mail.com";
-var bool = true;
+var currPassword = "password";
+var Nfirst = document.forms["RegForm"]["first"];
+var Nlast = document.forms["RegForm"]["last"];
+var Nmail = document.forms["RegForm"]["NEBox"];
+var NNpass = document.forms["RegForm"]["NPass"];
+var NCpass = document.forms["RegForm"]["Opass"];
+
 function CheckMember()
 {
-    var Nmail = document.forms["RegForm"]["NEBox"];
-    var Omail = document.forms["RegForm"]["OEBox"];
     
-    if (Omail.value != currEmail)                   
-    { 
-        window.alert("Please enter current e-mail address."); 
-        Omail.focus(); 
-         var bool = false;
-        return false; 
-    } 
-    
-    if (Nmail.value == "" )                           
+    if (Nmail.value == "" || Nmail.value.indexOf("@", 0) < 0 || Nmail.value.indexOf(".", 0) < 0)         
     { 
         window.alert("Please enter a valid e-mail address."); 
         Nmail.focus(); 
-        var bool = false;
         return false; 
     } 
-    if (Nmail.value.indexOf("@", 0) < 0)                 
-    { 
-        window.alert("Please enter a valid e-mail address."); 
-        Nmail.focus(); 
-         var bool = false;
+    if(Nfirst == "")
+    {
+       window.alert("Please enter a First Name."); 
+        Nfirst.focus(); 
         return false; 
-    } 
-    if (Nmail.value.indexOf(".", 0) < 0)               
-    { 
-        window.alert("Please enter a valid e-mail address."); 
-        Nmail.focus(); 
-         var bool = false;
+    }
+   if(Nlast == "")
+    {
+       window.alert("Please enter a Last Name."); 
+        Nlast.focus(); 
         return false; 
-    } 
+    }
+    if(NNpass == "")
+    {
+       window.alert("Please enter your password."); 
+        Nlast.focus(); 
+        return false; 
+    }
+    if(NNpass.value != NCpass.value)
+    {
+       window.alert("password does not match."); 
+        Nlast.focus(); 
+        return false; 
+    }
     else
         {
-var newcurrEmail = document.forms["RegForm"]["NEBox"].value;     
+var newcurrFirst = Nfirst.value;
+currFName = newcurrFirst;            
+Nfirst.value = currFName;           
+
+var newcurrLast = Nlast.value;
+currLName = newcurrLast;            
+Nlast.value = currLName; 
+            
+var newcurrEmail = Nmail.value;     
 currEmail = newcurrEmail;            
- document.getElementById("OEBox").value = currEmail;
+Nmail.value = currEmail;
+            
+var newcurrpas = NNpass.value;
+currPassword = newcurrpas;            
+NNpass.value = currPassword;
+            
+NCpass.value = "";
+NCpass.style.border = "1.4px solid dimgray";            
+alert("info updated");
         }
     }
+
+function conpassvalid()
+{
+    if(NCpass.value == "")
+        {
+             NCpass.style.border = "1.4px solid dimgray";
+        }
+    else if(NCpass.value == NNpass.value)
+    {
+            NCpass.style.border = "1.4px solid green";
+    }
+    else
+    {
+        NCpass.style.border = "1.4px solid red";    
+    }
+    
+}
+
 function PresentWaring()
- {
+{
        
     if (!confirm("are you shure you wish to delete your acount ?")) 
         {
@@ -58,6 +99,12 @@ function PresentWaring()
 
 function OpenTest()
 {
-    document.getElementById("OEBox").setAttribute("value", currEmail);
+    document.getElementById("first").setAttribute("value", currFName);
+    document.getElementById("last").setAttribute("value", currLName);
+    
+    document.getElementById("NEBox").setAttribute("value", currEmail);
+    
+     document.getElementById("NPass").setAttribute("value", currPassword);
+    
 }
 

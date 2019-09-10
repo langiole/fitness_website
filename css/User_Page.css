@@ -32,7 +32,7 @@ input.shape::placeholder
    
 }
 
-p.word
+p.wordE
     {
     font-Size: 25px;
     font-family: sans-serif;
@@ -41,6 +41,32 @@ p.word
     right: 80px; 
     }
 
+p.wordN
+    {
+    font-Size: 25px;
+    font-family: sans-serif;
+    text-align: center;
+    position: relative; 
+    right: 45px; 
+    }
+
+
+p.wordNP
+    {
+    font-Size: 25px;
+    font-family: sans-serif;
+    text-align: center;
+    position: relative; 
+    right: 25px; 
+    }
+p.wordCP
+    {
+    font-Size: 25px;
+    font-family: sans-serif;
+    text-align: center;
+    position: relative; 
+    right: 5px; 
+    }
 button.sub
 {
    width:150px; 
