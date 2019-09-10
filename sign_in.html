@@ -1,31 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="styles/sign_in.css"> 
+<link rel="stylesheet" type="text/css" href="css/sign_in.css"> 
 </head>
-<script>
-function CheckMember()
-{
-    
-    var name = document.forms["RegForm"]["username"];
-     var pasname = document.forms["RegForm"]["Pasword"];
-        if(name.value == "") {
-            window.alert("Please enter your name."); 
-            name.focus(); 
-            return false; 
-        }
-        if(pasname.value == "") {
-            window.alert("Please enter your password."); 
-            name.focus(); 
-            return false; 
-        }
-    }
-</script>  
 
+<script type="text/javascript" src="js/sign_in.js"></script>
   
 <header>
    
-    <center><a href= "home.html"><img class="sty" src="assets/logo.png" alt="our logo"></a></center>  
+    <center><a href= "home.html"><img class="sty" src="images/logo.png" alt="our logo"></a></center>  
 
 </header>
     
