@@ -53,7 +53,7 @@ function validateForm() {
     
     // check if user accepted the terms & conditions
     if (document.forms["signupForm"]["policy"].checked == false) {
-        alert("Read and accept the terms and conditions to sign up");
+        alert("Accept the terms and conditions to sign up");
         return false;
     }
     
