@@ -5,9 +5,25 @@
         <link rel="stylesheet" type="text/css" href="css/default.css"> 
     </head>
     <header>
-        <center><a href= "home.html"><img class="sty" src="images/logo.png" alt="our logo"></a></center>  
+        <center><a href= "home.html"><img class="logo" src="images/logo.png" alt="our logo"></a></center>  
     </header>
     <body>
+        <h2> BMI calculator  </h2>
+        <br>
+        <p>Enter your infomation below and we will automatically calculate your BMI.</p>
+        <br>
+            <form onsubmit="bmi(); return false;" name="formBMI">
+                Height:<br>
+                <input type="number" name="ft" min="1" value=""> feet
+                <input type="number" name="inch" min="0" max="11" value=""> inch
+                <br>
+                Weight:<br>
+                <input type="number" name="mass" min="0" value=""> lbs
+                <br><br>
+                <input type="submit" value="Submit">
+            </form> 
+            <h2> BMI: </h2>
+            <p id="bmiLabel"></p>
         <br>
     </body>
 </html>

@@ -1,12 +1,10 @@
 
 # Notices
 
-" mslckr will be seeking some tutoring help, potentially unavailable wednessday."
-
-# Important
-
-" ALL PULL REQUESTS TO THE MASTER BRANCH NEEDS TO HAVE BEEN UPDATED TO REQUEST 20+ IN ORDER TO PREVENT FURTHER ISSUES INVOLVING DIRECTORY REFERENCING."
+"When making new html files, make a copy of the pageTemplate file, it provides both the logo and linked to a css file."
 
 # Objective
 
-" implementing javascript programs to improve scripts "
+" implementing javascript programs to improve scripts."
+
+" link our web pages together."

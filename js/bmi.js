@@ -1,4 +1,7 @@
-function bmi(ft, inch, mass) {
+function bmi() {
+    var ft = document.forms["formBMI"]["ft"].value;
+    var inch = document.forms["formBMI"]["inch"].value;
+    var mass = document.forms["formBMI"]["mass"].value;
     inch = inch + (12 * ft);
-    return (mass / (inch * inch) * 703);
+    document.getElementById("bmiLabel").innerHTML=((703 * mass) / (inch * inch));
 }
