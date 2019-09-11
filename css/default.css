@@ -11,7 +11,7 @@
             }
 
             body {
-                font-family: sans-serif;
+                font-family: 'Lucida Sans';
             }
 
             body h1 {
@@ -25,7 +25,67 @@
                 
                 
             }
-
+            h1 { 
+                display: block;
+                font-size: 2em;
+                margin-top: 0.67em;
+                margin-bottom: 0.67em;
+                margin-left: 0;
+                margin-right: 0;
+                font-weight: bold;
+            }
+            h2 {
+                display: block;
+                font-size: 1.5em;
+                margin-top: 0.83em;
+                margin-bottom: 0.83em;
+                margin-left: 0;
+                margin-right: 0;
+                font-weight: bold;
+            } 
+            h3 { 
+                display: block;
+                font-size: 1.17em;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                margin-left: 0;
+                margin-right: 0;
+                font-weight: bold;
+            }
+            h4 { 
+                display: block;
+                font-size: 1em;
+                margin-top: 1.33em;
+                margin-bottom: 1.33em;
+                margin-left: 0;
+                margin-right: 0;
+                font-weight: bold;
+            }
+            h5 { 
+                display: block;
+                font-size: .83em;
+                margin-top: 1.67em;
+                margin-bottom: 1.67em;
+                margin-left: 0;
+                margin-right: 0;
+                font-weight: bold;
+            }
+            h6 { 
+                display: block;
+                font-size: .67em;
+                margin-top: 2.33em;
+                margin-bottom: 2.33em;
+                margin-left: 0;
+                margin-right: 0;
+                font-weight: bold;
+            }
+            p {
+                display: block;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                margin-left: 0;
+                margin-right: 0;
+            }
             .parent {
                 display: flex;
                 flex-direction: row;
@@ -118,7 +178,6 @@
             .tableTitle {
                 text-align: center;
                 margin-bottom: 1px;
-                text-transform: capitalize;
             }
 
             .input-icons .search-icon {
@@ -157,14 +216,12 @@
             }
 
             .tableStyle {
-                border: solid 2px black;
-                border-collapse: collapse;
+                background-color: black;
                 width: 100%;
                 font-size: 25px;
             }
 
             td {
-                border: solid 2px black;
                 background-color: white;
                 padding-left: 1%;
             }

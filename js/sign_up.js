@@ -1,28 +1,61 @@
 function validatePassword() {
-    var password = document.getElementById("pword");
-    var confirmPassword = document.getElementById("cpword");
+    var password = document.forms["signupForm"]["Password"];
+    var confirmPassword = document.forms["signupForm"]["cpassword"];
     if (confirmPassword.value == "") {
-       document.getElementById("cpword").style.border = "1px solid #ccc" ;
+        colorBorder("cpassword", "#ccc");
+        return false;
     }
     else if(password.value == confirmPassword.value) { 
-        document.getElementById("cpword").style.border = "1.4px solid green";
+        colorBorder("cpassword", "green");
+        return true;
     }
     else {
-        document.getElementById("cpword").style.border = "1.4px solid red";
+        colorBorder("cpassword", "red");
+        return false;
     }
 }
 
+function colorBorder(name, color) {
+    document.forms["signupForm"][name].style.border = "1.4px solid " + color;
+}
+
 function validateForm() {
-    var firstName = document.forms["signupForm"]["firstname"].value;
-    var lastName = document.forms["signupForm"]["lastname"].value;
-    var email = document.forms["signupForm"]["email"].value;
-    var password = document.forms["signupForm"]["password"].value;
-    var cPassword = document.forms["signupForm"]["cPassword"].value;
-  
-    if (firstName == "" || firstName == " ") {
-        alert("First name must be filled out");
+    var form = [document.forms["signupForm"]["First name"],
+                document.forms["signupForm"]["Last name"],
+                document.forms["signupForm"]["Email"],
+                document.forms["signupForm"]["Password"]];
+
+    // check if all inputs are filled out
+    valid = true
+    for (i = 0; i < form.length; i++) {
+        if (form[i].value.trim() == "") {
+            // show error message
+            colorBorder(form[i].name, "red");
+            document.getElementById(form[i].name + " err mssg").style.display = "block";
+            document.getElementById(form[i].name + " err mssg").innerHTML = "Enter " + form[i].name.toLowerCase();
+            valid = false
+        }
+        else {
+            // clear message
+            colorBorder(form[i].name, "#ccc");
+            document.getElementById(form[i].name + " err mssg").style.background = "none";
+            document.getElementById(form[i].name + " err mssg").innerHTML = "";
+        }
     }
-    else if (lastName == "") {
-        alert("Last name must be filled out");
+    
+    if (!valid) { return false; }
+    
+    // check if passwords match
+    if (!validatePassword()) {
+        alert("Passwords must match");
+        return false;
     }
+    
+    // check if user accepted the terms & conditions
+    if (document.forms["signupForm"]["policy"].checked == false) {
+        alert("Accept the terms and conditions to sign up");
+        return false;
+    }
+    
+    return false;
 }
