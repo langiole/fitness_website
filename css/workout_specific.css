@@ -157,14 +157,12 @@
             }
 
             .tableStyle {
-                border: solid 2px black;
-                border-collapse: collapse;
+                background-color: black;
                 width: 100%;
                 font-size: 25px;
             }
 
             td {
-                border: solid 2px black;
                 background-color: white;
                 padding-left: 1%;
             }
