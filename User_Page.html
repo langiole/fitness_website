@@ -29,13 +29,19 @@
 <input class = "shape" type="email" id = "NEBox"  placeholder="Email" value = "" >
     <br>
     <br> 
+    <p class = "wordNP" >Password</p>
+    <input class = "shape" type="password" id = "Pass"  placeholder="password" value = "" >
+    <br>
+    <br> 
     <p class = "wordNP" >New Password</p>
-    <input class = "shape" type="password" id = "NPass"  placeholder="password" value = "" >
+    <input class = "shape" type="password" id = "NPass"  placeholder="new password" value = "" >
     <br>
     <br> 
     <p class = "wordCP" >Confirm Password</p>
-    <input class = "shape" type="password" id = "Opass"  onkeyup="conpassvalid()" placeholder="Password" value = "">
+    <input class = "shape" type="password" id = "Opass"  onkeyup="conpassvalid()" placeholder="Reenter Password" value = "">
     <br>
+    <p class = "SP">Show Password<input type="checkbox" style= "width:15px; 
+    height:15px;" onclick="ShowPass()"></p>
     <br> 
     <button class = "sub" type="button" onclick="CheckMember();"  >Update info</button>  
     <br>

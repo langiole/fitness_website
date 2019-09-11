@@ -5,6 +5,7 @@ var currPassword = "password";
 var Nfirst = document.forms["RegForm"]["first"];
 var Nlast = document.forms["RegForm"]["last"];
 var Nmail = document.forms["RegForm"]["NEBox"];
+var Npass = document.forms["RegForm"]["Pass"];
 var NNpass = document.forms["RegForm"]["NPass"];
 var NCpass = document.forms["RegForm"]["Opass"];
 
@@ -29,20 +30,27 @@ function CheckMember()
         Nlast.focus(); 
         return false; 
     }
-    if(NNpass == "")
+    if(Npass.value != currPassword)
     {
-       window.alert("Please enter your password."); 
-        Nlast.focus(); 
+        window.alert("wrong password."); 
+        Npass.focus(); 
+        return false; 
+    }
+    if(NNpass.value == "")
+    {
+       window.alert("Please enter your new password."); 
+        NNpass.focus(); 
         return false; 
     }
     if(NNpass.value != NCpass.value)
     {
        window.alert("password does not match."); 
-        Nlast.focus(); 
+       NNpass.focus(); 
+        NCpass.focus(); 
         return false; 
     }
     else
-        {
+    {
 var newcurrFirst = Nfirst.value;
 currFName = newcurrFirst;            
 Nfirst.value = currFName;           
@@ -57,10 +65,12 @@ Nmail.value = currEmail;
             
 var newcurrpas = NNpass.value;
 currPassword = newcurrpas;            
-NNpass.value = currPassword;
+Npass.value = "";
+   
+NNpass.value = "";            
             
 NCpass.value = "";
-NCpass.style.border = "1.4px solid dimgray";            
+NCpass.style.border = "1.4px solid dimgray";                           
 alert("info updated");
         }
     }
@@ -97,6 +107,20 @@ function PresentWaring()
         
  }
 
+function ShowPass() 
+{
+ 
+  if (Npass.type == "password") {
+    Npass.type = "text";  
+    NNpass.type = "text";
+    NCpass.type = "text";
+  } else {
+    Npass.type = "Password";   
+    NNpass.type = "password";
+    NCpass.type = "password";
+  }
+}
+
 function OpenTest()
 {
     document.getElementById("first").setAttribute("value", currFName);
@@ -104,7 +128,6 @@ function OpenTest()
     
     document.getElementById("NEBox").setAttribute("value", currEmail);
     
-     document.getElementById("NPass").setAttribute("value", currPassword);
     
 }
 

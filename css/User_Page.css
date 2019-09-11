@@ -26,6 +26,7 @@ input.shape:focus
      outline: none;   
     
 }
+
 input.shape::placeholder
 {
     color: lightgray;
@@ -33,7 +34,7 @@ input.shape::placeholder
 }
 
 p.wordE
-    {
+{
     font-Size: 25px;
     font-family: sans-serif;
     text-align: center;
@@ -42,7 +43,7 @@ p.wordE
     }
 
 p.wordN
-    {
+{
     font-Size: 25px;
     font-family: sans-serif;
     text-align: center;
@@ -50,23 +51,41 @@ p.wordN
     right: 45px; 
     }
 
+p.wordP
+{
+    font-Size: 25px;
+    font-family: sans-serif;
+    text-align: center;
+    position: relative; 
+    right: 55px; 
+    }
 
 p.wordNP
-    {
+{
     font-Size: 25px;
     font-family: sans-serif;
     text-align: center;
     position: relative; 
     right: 25px; 
     }
+
 p.wordCP
-    {
+{
     font-Size: 25px;
     font-family: sans-serif;
     text-align: center;
     position: relative; 
     right: 5px; 
     }
+
+p.SP
+{
+    font-size: 18px;
+   text-align: center;
+    position: relative; 
+    right: 45px; 
+    }
+
 button.sub
 {
    width:150px; 
@@ -158,7 +177,3 @@ div.content {
     float: none;
   }
 }
-
-
-
-
