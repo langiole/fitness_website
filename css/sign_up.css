@@ -28,13 +28,14 @@ h2 {
 input[type=submit] {
     background: none;
     border: 1.4px solid gray;
-    color: gray
+    color: gray;
+    font-weight: bold;
 }
 
 input[type=submit]:hover {
     background: gray;
     color: white;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .full-width {
@@ -42,21 +43,32 @@ input[type=submit]:hover {
 }
 
 form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 5px;
 }
+
 form label {
   display: block;
 }
+
+.errormssg {
+    width: 100%; 
+    background: pink; 
+    color: darkred; 
+    font-size: 11px; 
+    padding: 5px;
+    display: none;
+}
+
 form p {
   margin: 0;
 }
 
-
 input {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1.4px solid #ccc;
     border-radius: 4px;
 }
 
