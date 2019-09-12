@@ -1,23 +1,36 @@
 function CheckMember()
 {
-    
-    var name = document.forms["RegForm"]["username"];
-     var pasname = document.forms["RegForm"]["Pasword"];
-        if(name.value == "") {
-            window.alert("Please enter your name."); 
-            name.focus(); 
-            return false; 
+var name = document.forms["RegForm"]["user"];
+var pasname = document.forms["RegForm"]["pass"];
+    if(name.value == "") 
+    {
+     if($("#userAlert").find("div#userbox").length==0){
+    $("#userAlert").append("<div class=' alert alert-danger alert-dismissable' id='userbox'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><center><strong>username incorect</strong></center></div>");
+  }
+  $("#userAlert").css("display", "");
+document.getElementById("WarnType").innerHTML = "username incorect";
+         name.focus(); 
+         return false; 
         }
         if(pasname.value == "") {
-            window.alert("Please enter your password."); 
-            name.focus(); 
+           if($("#userAlert").find("div#userbox").length==0){
+    $("#userAlert").append("<div class='alert alert-danger alert-dismissable' id='userbox'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><center><strong>password incorect</strong></center></div>");
+  }
+  $("#userAlert").css("display", "");
+            
+document.getElementById("WarnType").innerHTML = "password incorect";
+            pasname.focus(); 
             return false; 
         }
 }
 
-function showAlert(){
-  if($("#myAlert").find("div#myAlert2").length==0){
-    $("#myAlert").append("<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button> Success! message sent successfully.</div>");
+function ShowPass() 
+{
+ 
+  if (document.forms["RegForm"]["pass"].type == "password") 
+  {
+   document.forms["RegForm"]["pass"].type = "text"
+  } else {
+    document.forms["RegForm"]["pass"].type = "password"
   }
-  $("#myAlert").css("display", "");
 }

@@ -1,7 +1,5 @@
- 
-
 p.word
-    {
+{
     font-Size: 25px;
     font-family: sans-serif;
     text-align: center;
@@ -29,11 +27,13 @@ input.shape:focus
      outline: none;   
     
 }
+
 input.shape::placeholder
 {
     color: lightgray;
    
 }
+
 input.sub
 {
    width:150px; 
@@ -61,4 +61,3 @@ img.sty
     height:150px;
     
 }
-

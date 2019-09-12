@@ -21,31 +21,42 @@
     
 <body>
  <div class="container">
-     <div class="alert alert-danger" role="alert">
-           A simple danger alert—check it out!
-             </div>
-      
+      <div class="container" style="display:none;" id="userAlert">
+        <div class="alert alert-danger" id="userbox">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <center><strong><p id="WarnType"></p></strong></center>
+        </div>
+
+    </div>
 <br>
         
-<p class = "word">Username</p>
+
         
 <form name="RegForm" action="home.html" onsubmit="return CheckMember()" method="get" class="needs-validation" novalidate>
     
-<div class="form-row">
-    <div class="col-sm-7 mb-3 offset-sm-3">
+  <p class = "word">Username</p>  
+<div class="form-row justify-content-center">
+    <div class="col-sm-7 mb-3 ">
         
-<input class = "form-control" type="text" name="username" placeholder="Username" required>
+<input class = "form-control" type="text" id="user" placeholder="Username" required>
       </div>
     </div>
 <br>
         
 <p class = "word" >Password</p>
- <div class="form-row">
-    <div class="col-sm-7 mb-3 offset-sm-3 ">   
-<input class = "form-control" type="password" name="Pasword" placeholder="Password" required>
+ <div class="form-row justify-content-center">
+    <div class="col-sm-7 mb-3">   
+<input class = "form-control" type="password" id= "pass" placeholder="Password" required>
 </div>
 </div>
-<br>
+<br> 
+    <div class="row checkbox-row">
+    <div class="col-lg-10">
+<div class="checkbox-inline" style="text-align:center;">
+<p class = "SP"><input type="checkbox" style= "width:15px;height:15px;" onclick="ShowPass()"> Show Password</p>
+    </div>
+    </div>
+</div>    
 <br>   
 <input class = "sub" type="submit" id = "huvermit"  name="Submit" value="Sign In">
  
