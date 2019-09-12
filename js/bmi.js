@@ -5,7 +5,6 @@ function bmi() {
     var height = (inch * 1.0) + (12 * ft);
     var bmiPrime = (703.0/25.0) * (mass / (height * height));
     var bmiNum = bmiPrime * 25.0;
-    bmiNum.toFixed(2);
 
     if(bmiPrime < .60){
         document.getElementById("bmiCat").innerHTML=("Very Severely Underweight");
@@ -44,5 +43,5 @@ function bmi() {
         document.getElementById("bmiCat").innerHTML=("");
     }
 
-    document.getElementById("bmiLabel").innerHTML=(bmiNum);
+    document.getElementById("bmiLabel").innerHTML=(bmiNum.toFixed(2));
 }
