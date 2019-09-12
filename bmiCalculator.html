@@ -15,16 +15,18 @@
         <br>
             <form onsubmit="bmi(); return false;" name="formBMI">
                 Height:<br>
-                <input type="number" name="ft" min="1" value=""> feet
-                <input type="number" name="inch" min="0" max="11" value=""> inch
+                <input class="heightvar" type="number" name="ft" min="1" value=""> ft
+                <input class="heightvar" type="number" name="inch" min="0" max="11" value=""> in
                 <br>
                 Weight:<br>
-                <input type="number" name="mass" min="0" value=""> lbs
+                <input class="weightvar" type="number" name="mass" min="0" value=""> lbs
                 <br><br>
                 <input type="submit" value="Submit">
             </form> 
             <h2> BMI: </h2>
             <p id="bmiLabel"></p>
+            <h2> Catagory:</h2>
+            <h3 id="bmiCat"></h3>
         <br>
     </body>
 </html>
