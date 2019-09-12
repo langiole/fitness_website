@@ -16,23 +16,17 @@
 
             body h1 {
                 text-align: center;
+                text-transform: capitalize;
                 transition: 1s linear;
                 -webkit-transition: 1s linear;
             }
             body h1:hover {
                 text-align: center;
                 transform: skewX(30deg);
-                
-                
             }
 
-            .parent {
-                display: flex;
-                flex-direction: row;
-            }
 
             .column {
-                flex: 1;
                 border: solid 3px;
                 box-shadow: 5px 5px 0 #3f403f;
             }
@@ -61,7 +55,10 @@
                 font-size: 25px;
                 margin: 10px;
             }
-
+            #reps {
+                font-size: 20px;
+                font-weight: bold;
+            }
             .moreButton {
                 border: solid 2px black;
                 width: 100%;
@@ -165,4 +162,8 @@
 
             td a:hover {
                 transform: translateX(15px)
+            }
+
+            footer{
+                background-color: #2E2E2E;
             }
