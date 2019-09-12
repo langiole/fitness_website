@@ -118,6 +118,7 @@
             .tableTitle {
                 text-align: center;
                 margin-bottom: 1px;
+                text-transform: capitalize;
             }
 
             .input-icons .search-icon {
@@ -156,12 +157,14 @@
             }
 
             .tableStyle {
-                background-color: black;
+                border: solid 2px black;
+                border-collapse: collapse;
                 width: 100%;
                 font-size: 25px;
             }
 
             td {
+                border: solid 2px black;
                 background-color: white;
                 padding-left: 1%;
             }

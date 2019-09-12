@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/sign_up.css">
-    <script src="scripts/sign_up.js"></script>
+    <script src="js/sign_up.js"></script>
 </head>
 <header>
     <center><a href= "home.html"><img id="logo" src="images/logo.png" alt="logo"></a></center>
@@ -12,15 +12,39 @@
     <div class="wrapper">
         <div class="form">
             <h2 align=center>Sign Up</h2>
-            <form name="signupForm" action="home.html" onsubmit="validateForm()">
-                <p><input type="text" name="firstname" placeholder="First Name"></p>
+            <form name="signupForm" action="home.html" onsubmit="return validateForm();">
+                <p><input type="text" name="First name" placeholder="First Name"></p>
                 
-                <p><input name="lastname" type="text" placeholder="Last Name"></p>
-                <p class="full-width"><input type="text" name="email" placeholder="Email"></p>
-                <p class="full-width"><input id="pword" onkeyup="validatePassword()" type="password" name="pword" placeholder="Password"></p>
-                <p class="full-width"><input id="cpword" onkeyup="validatePassword()" type="password" name="cpword" placeholder="Confirm Password"></p>
                 
-                <p class="full-width"><input type="checkbox" id="policy" name="policy">
+                <p><input name="Last name" type="text" placeholder="Last Name"></p>
+                
+                <center id="First name err mssg" class="errormssg">Enter first name</center>
+                
+                <center id="Last name err mssg" class="errormssg">Enter last name</center>
+                
+                <br>
+                
+                <p class="full-width"><input type="text" name="Email" placeholder="Email"><center id="Email err mssg" class="full-width errormssg">Enter email address</center></p>
+                
+                
+                
+                <br>
+                
+                <p class="full-width"><input onkeyup="validatePassword()" type="password" name="Password" placeholder="Password"><center id="Password err mssg" class="full-width errormssg">Enter password</center></p>
+                
+               
+
+                
+                <br>
+                
+                <p class="full-width"><input onkeyup="validatePassword()" type="password" name="cpassword" placeholder="Confirm Password"></p>
+                
+                
+
+                
+                <br>
+                
+                <p class="full-width"><input type="checkbox" name="policy">
                 <label style="font-size: 10px; color: gray; position: relative; text-align: center; bottom: 15px; right: 40px" for="policy">I accept the Terms of Use & Privacy Policy</label>
                 </p>
                 
