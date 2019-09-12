@@ -1,10 +1,20 @@
 
-# Notices
+# Important
 
-"When making new html files, make a copy of the pageTemplate file, it provides both the logo and linked to a css file."
+"A major update is in the works:"
+
+"   - Provide a form of navigation."
+
+"Please keep in mind that all pending pull requests must be completed before the major update can be carried through"
 
 # Objective
 
-" implementing javascript programs to improve scripts."
+"Finish up your changes and make your pull requests."
 
-" link our web pages together."
+# Milestones
+
+"Navigation Bar"
+
+"Search Capability"
+
+"Footer Content"
