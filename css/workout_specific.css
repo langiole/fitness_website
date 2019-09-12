@@ -66,7 +66,8 @@
                 border: solid 2px black;
                 width: 100%;
                 text-align: center;
-                font-size: 25px;
+                line-height: 2.5 !important;
+                font-size: 1.5rem !important; 
                 text-transform: capitalize;
                 padding-top: 2%;
                 padding-bottom: 2%;
@@ -75,10 +76,10 @@
                 transition: all .1s linear;
             }
 
-            .moreButton:hover {
+            /*.moreButton:hover {
                 background-color: lightgrey;
 
-            }
+            }*/
 
             .moreButton:hover span {
                 position: relative;
@@ -106,56 +107,35 @@
                 transform: translateY(3px);
             }
 
-            #moreExercises {
-                display: none;
-            }
-
             .bodyImg {
                 width: 100px;
                 height: 100px;
             }
+            #moreExerciseBlock{
+                width: 20%;
+            }
 
             .tableTitle {
-                text-align: center;
                 margin-bottom: 1px;
                 text-transform: capitalize;
             }
-
+            /*
             .input-icons .search-icon {
                 position: absolute;
             }
 
             .input-icons {
                 width: 100%;
-            }
+            }*/
 
-            .search-icon {
-                padding: 10px;
-                min-width: 10px;
+            .goodBG-color {
+                background-color: #3f403f !important;
             }
 
             form {
                 padding: 10px;
-                padding-left: 20px;
             }
-
-            form div input {
-                width: 180px;
-                height: 25px;
-                font-size: 25px;
-                border: solid 2px;
-                padding-left: 30px;
-                padding-top: 4px;
-                padding-bottom: 4px;
-                -webkit-transition: width 2s;
-                transition: width 2s;
-
-            }
-
-            form div input:focus {
-                width: 220px;
-            }
-
+            
             .tableStyle {
                 border: solid 2px black;
                 border-collapse: collapse;
@@ -176,7 +156,7 @@
             td a {
                 width: 100%;
                 display: inline-block;
-                text-decoration: none;
+                text-decoration: none !important;
                 color: black;
                 position: relative;
                 transition: 1s;
