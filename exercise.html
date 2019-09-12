@@ -1,74 +1,88 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Exercise</title>
-        <meta name="description" content="Exercise page">
-        <link rel="stylesheet" type="text/css" href="css/workout_specific.css">
-        <script src="https://kit.fontawesome.com/8ff1d0c51f.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    </head>
-    
-    <header>
-            <center><a href= "home.html"><img class="logo" src="images/logo.png" alt="logo" ></a></center>
-    </header>
-    
-    <body>
-        
-        <h1 id=exerciseTitle>Ab Roller</h1>
-        
-        <!------------------------->
-        <div class="parent">
-            <div class="column">
-                <h2 id=Descrp-header> Description</h2>
-                <p id=descrp>Hold the Ab Roller wheel on the floor with both hands as you kneel and have your back straight. Push the Ab Roller forward while your core stretches as you get lower. After a pause, roll the wheel back towards you as you end up in the starting position.</p>
-            </div>
-            
-            <div style="width: 5%"></div>
-            
-            <div class="column iframeWrapper"  id="iframeBlock">
-                <iframe id="yt_video" width="100%" height="100%" src="https://www.youtube.com/embed/A3uK5TPzHq8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-        <!------------------------->
-        <p style="padding-top: 2px"></p>
-        <button type="button" onclick="moreButtonState()" class="moreButton"><span id=buttonText>Show more abs exercises
-            </span></button>
-        <p style="padding-top: 3px"></p>
-        
-        <div id="moreExercises">    
-            <center><img src="images/abs.png" alt="logo" class="bodyImg"></center>
-            
-            <h2 class="tableTitle" id="tableTitleId">Ab Exercises</h2>
-            <center>
-                <form> 
-                    <div class="input-icons">
-                        <i class="fas fa-search search-icon"></i>
-                        <input type="text" placeholder="search workout" value="">
-                    </div>
-            
-                </form>
-                
-            </center>
-            <!------------------------->
-            <table class="tableStyle" id="exerTable">
-                <!--
-                <tr>
-                    <td><a href="#">air bike</a></td>
-                    <td><a href="#">cable crunch</a></td>
-                    <td><a href="#">Exercise</a></td>
-                    <td><a href="#">Exercise</a></td>
-                    <td><a href="#">Exercise</a></td>
-                </tr>
-            -->
-            </table>
-            <!------------------------->
-        </div>
-        
-        <script src="./scripts/moreButtonState.js" ></script>
-        <script src="./scripts/jsonLoader.js"></script>
-    </body>
-</html>
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Exercise</title>
+    <meta name="description" content="Exercise page">
+    <link rel="stylesheet" type="text/css" href="css/workout_specific.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/8ff1d0c51f.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</head>
+
+<header>
+    <center><a href="home.html"><img class="logo" src="images/logo.png" alt="logo"></a></center>
+</header>
+
+<body>
+
+    <h1 class="display-5" id=exerciseTitle>Ab Roller</h1>
+
+    <div class="container-fluid">
+        <div class="row pl-5">
+        <div class="column col-5 px-0">
+            <h2 id=Descrp-header> Description</h2>
+            <p id=descrp>Hold the Ab Roller wheel on the floor with both hands as you kneel and have your back straight.
+                Push the Ab Roller forward while your core stretches as you get lower. After a pause, roll the wheel
+                back towards you as you end up in the starting position.</p>
+        </div>
+
+        <div class="col-1"></div>
+
+        <div class="column col-5 px-0 iframeWrapper" id="iframeBlock">
+            <iframe id="yt_video" width="100%" height="100%" src="https://www.youtube.com/embed/A3uK5TPzHq8"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        </div>
+    </div>
+
+    <p class="py-2"></p>
+    <button type="button" class="btn btn-outline-dark btn-lg btn-block moreButton " data-toggle="collapse"
+        data-target="#moreExercises" aria-expanded="false" aria-controls="moreExercises">
+        <span id=buttonText>Show more abs exercises</span>
+    </button>
+    <p class="py-2"></p>
+
+    <div class="collapse" id="moreExercises">
+        <center>
+            <img src="images/abs.png" alt="logo" class="bodyImg">
+            <div id="moreExerciseBlock">
+                <h2 class="display-5 tableTitle" id="tableTitleId">Ab Exercises</h2>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary goodBG-color dropdown-toggle" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Abs
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <a class="dropdown-item" href="#!">Action</a>
+                        <a class="dropdown-item" href="#!">Another action</a>
+                    </div>
+                </div>
+
+                <form>
+                    <div class="input-group">
+                            <div class="input-group-prepend">
+                                    <span class="input-group-text goodBG-color"><i class="fas fa-search text-white"></i></span>
+                                  </div>
+                        <input class="form-control" type="text" placeholder="search workout" value="">
+                    </div>
+
+                </form>
+            </div>
+        </center>
+
+        <table class="tableStyle" id="exerTable"></table>
+    </div>
+
+    <script src="./js/jsonLoader.js"></script>
+</body>
+
+</html>
