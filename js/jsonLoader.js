@@ -20,6 +20,7 @@ function generateExerciseHTML(exerciseArr){
     document.getElementById("yt_video").setAttribute("src",exerciseArr[muscle][index].link);
     document.getElementById("buttonText").innerText=`Show more ${muscle} exercises`;
     document.getElementById("tableTitleId").innerText=`${muscle} Exercises`;
+    document.getElementById("dropdownMenu1").innerText=`${muscle}`;
 }
 //Dynamically manipulate the table in our DOM
 function generateTable(exerciseArr){
