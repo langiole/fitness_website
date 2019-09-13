@@ -1,27 +1,14 @@
 
 # Notice
 
-"A major update is in the works"
+"A major update has just been completed"
+
+"please make sure your branches are up to date"
 
 # Objective
 
-"Complete major update"
+"To be determined"
 
-# Milestones
+# Master version
 
-"Navigation Bar"
-
-"Redesign and overhaul"
-
-"Footer Content"
-
-# Steps
-
-"update exercise"
-
-"update sign_in"
-
-"update sign_out"
-
-"update User_page"
-
+"Navigation Overhaul Update (9/13/2019)"
