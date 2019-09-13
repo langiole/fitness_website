@@ -1,8 +1,8 @@
 
-# Notices
+# Notice
 
-" A recent pull request has made important updates to the master branch, please update your own branches before merging your branch with the master to prevent possible issues."
+"A suprise is in store for tomorrows presentation..."
 
 # Objective
 
-" implementing javascript programs to improve scripts "
+"Finish up your changes and make your pull requests."
