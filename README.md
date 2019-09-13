@@ -1,8 +1,27 @@
 
 # Notice
 
-"A suprise is in store for tomorrows presentation..."
+"A major update is in the works"
 
 # Objective
 
-"Finish up your changes and make your pull requests."
+"Complete major update"
+
+# Milestones
+
+"Navigation Bar"
+
+"Redesign and overhaul"
+
+"Footer Content"
+
+# Steps
+
+"update exercise"
+
+"update sign_in"
+
+"update sign_out"
+
+"update User_page"
+
