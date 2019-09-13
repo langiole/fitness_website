@@ -13,18 +13,7 @@
             body {
                 font-family: 'Lucida Sans';
             }
-
-            body h1 {
-                text-align: center;
-                transition: 1s linear;
-                -webkit-transition: 1s linear;
-            }
-            body h1:hover {
-                text-align: center;
-                transform: skewX(30deg);
-                
-                
-            }
+            
             h1 { 
                 display: block;
                 font-size: 2em;

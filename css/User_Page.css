@@ -84,7 +84,7 @@ p.SP
    text-align: center;
     position: relative; 
     right: 45px; 
-    }
+}
 
 button.sub
 {
@@ -126,6 +126,10 @@ button.del:hover
 {
    background-color: red; 
     color: white;
+}
+
+.modal-backdrop.show {
+   background-color: indianred; 
 }
 
 .sidebar {
