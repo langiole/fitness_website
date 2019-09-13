@@ -11,40 +11,63 @@ var NCpass = document.forms["RegForm"]["Opass"];
 
 function CheckMember()
 {
-    
-    if (Nmail.value == "" || Nmail.value.indexOf("@", 0) < 0 || Nmail.value.indexOf(".", 0) < 0)         
-    { 
-        window.alert("Please enter a valid e-mail address."); 
-        Nmail.focus(); 
-        return false; 
-    } 
-    if(Nfirst == "")
+    if(Nfirst.value == "")
     {
-       window.alert("Please enter a First Name."); 
+       if($("#userAlert").find("div#userbox").length==0){
+    $("#userAlert").append("<div class=' alert alert-danger alert-dismissable' id='userbox'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><center><strong>enter first Name</strong></center></div>");
+  }
+  $("#userAlert").css("display", "");
+document.getElementById("WarnType").innerHTML = "enter first Name"; 
         Nfirst.focus(); 
         return false; 
     }
-   if(Nlast == "")
+    if(Nlast.value == "")
     {
-       window.alert("Please enter a Last Name."); 
+       if($("#userAlert").find("div#userbox").length==0){
+    $("#userAlert").append("<div class=' alert alert-danger alert-dismissable' id='userbox'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'style='>&times;</button><center><strong>enter Last Name</strong></center></div>");
+  }
+  $("#userAlert").css("display", "");
+document.getElementById("WarnType").innerHTML = "enter Last Name";  
         Nlast.focus(); 
         return false; 
     }
+    if (Nmail.value == "" || Nmail.value.indexOf("@", 0) < 0 || Nmail.value.indexOf(".", 0) < 0)         
+    { 
+       if($("#userAlert").find("div#userbox").length==0){
+    $("#userAlert").append("<div class=' alert alert-danger alert-dismissable' id='userbox'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><center><strong>enter valid email</strong></center></div>");
+  }
+  $("#userAlert").css("display", "");
+document.getElementById("WarnType").innerHTML = "enter valid email";; 
+        Nmail.focus(); 
+        return false; 
+    } 
     if(Npass.value != currPassword)
     {
-        window.alert("wrong password."); 
+        if($("#userAlert").find("div#userbox").length==0){
+    $("#userAlert").append("<div class=' alert alert-danger alert-dismissable' id='userbox'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><center><strong>wrong password</strong></center></div>");
+  }
+  $("#userAlert").css("display", "");
+document.getElementById("WarnType").innerHTML = "wrong password";  
         Npass.focus(); 
         return false; 
     }
     if(NNpass.value == "")
     {
-       window.alert("Please enter your new password."); 
+       if($("#userAlert").find("div#userbox").length==0){
+    $("#userAlert").append("<div class=' alert alert-danger alert-dismissable' id='userbox'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><center><strong>enter new password</strong></center></div>");
+  }
+  $("#userAlert").css("display", "");
+document.getElementById("WarnType").innerHTML = "enter new password"; 
         NNpass.focus(); 
         return false; 
     }
     if(NNpass.value != NCpass.value)
     {
-       window.alert("password does not match."); 
+       if($("#userAlert").find("div#userbox").length==0){
+    $("#userAlert").append("<div class=' alert alert-danger alert-dismissable' id='userbox'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'style='>&times;</button><center><strong>password does not match</strong></center></div>");
+  }
+  $("#userAlert").css("display", "");
+document.getElementById("WarnType").innerHTML = "password does not match";; 
        NNpass.focus(); 
         NCpass.focus(); 
         return false; 
@@ -71,7 +94,11 @@ NNpass.value = "";
             
 NCpass.value = "";
 NCpass.style.border = "1.4px solid dimgray";                           
-alert("info updated");
+if($("#userAlert2").find("div#userbox2").length==0){
+    $("#userAlert2").append("<div class=' alert alert-success alert-dismissable' id='userbox'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><center><strong>enter first Name</strong></center></div>");
+  }
+  $("#userAlert2").css("display", "");
+document.getElementById("WarnType2").innerHTML = "info updated"; 
         }
     }
 
