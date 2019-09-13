@@ -1,12 +1,12 @@
 // get query parameter from url containing muscle type and exercise id
 let queries=window.location.search.split('&');
-
 let muscle= queries[0].substr(1), index= queries[1];
+
 //edge case if no query receive set variables to default values
 if(muscle=="") muscle="abs";
 if(index==null || index=="") index=0;
 
-const pathToJson=`data/${muscle}.json`;
+const pathToJson=`data/${muscle}.json`;         //same as "data/"+ muscle +".json"
 
 //use jquery's getJSON function to load json file
 $.getJSON(pathToJson,exerciseArr=>{
