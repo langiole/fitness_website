@@ -1,15 +1,19 @@
+// get query parameter from url containing muscle type and exercise id
 let queries=window.location.search.split('&');
+
 let muscle= queries[0].substr(1), index= queries[1];
+//edge case if no query receive set variables to default values
 if(muscle=="") muscle="abs";
 if(index==null || index=="") index=0;
+
 const pathToJson=`data/${muscle}.json`;
 
 //use jquery's getJSON function to load json file
 $.getJSON(pathToJson,exerciseArr=>{
     //wait for the DOM to load
     $(document).ready(function(){
-    generateExerciseHTML(exerciseArr);
-    generateTable(exerciseArr);
+        generateExerciseHTML(exerciseArr);
+        generateTable(exerciseArr);
     });
 });
 
@@ -32,15 +36,16 @@ function generateTable(exerciseArr){
                     
                     for(let j=0; j<5; j++){
                        if(!(i <exerciseArr[muscle].length)) break;
-                    sessionStorage.setItem("exerciseID",`${i}`);
-                    let element=exerciseArr[muscle][i];
-                    let td= document.createElement("td");
-                    let a= document.createElement("a");
-                    a.href=`?${muscle}&${i}`;
-                    a.innerText = element.Exercise;
-                    td.appendChild(a);
-                    tr.appendChild(td);
-                    i++;
+                    
+                        let element=exerciseArr[muscle][i];
+                        let td= document.createElement("td");
+                        let a= document.createElement("a");
+                        //set the cell link and give it the muscle and id parameters
+                        a.href=`?${muscle}&${i}`;
+                        a.innerText = element.Exercise;
+                        td.appendChild(a);
+                        tr.appendChild(td);
+                        i++;
                     }
                     table.appendChild(tr);
             }
