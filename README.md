@@ -1,13 +1,11 @@
 
-# Important
+# Notice
 
-"A major update is in the works:"
-
-"Please keep in mind that all pending pull requests must be completed before the major update can be carried through"
+"A major update is in the works"
 
 # Objective
 
-"Finish up your changes and make your pull requests."
+"Complete major update"
 
 # Milestones
 
@@ -26,3 +24,4 @@
 "update sign_out"
 
 "update User_page"
+
