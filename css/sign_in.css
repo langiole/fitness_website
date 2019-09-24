@@ -1,7 +1,5 @@
- 
-
 p.word
-    {
+{
     font-Size: 25px;
     font-family: sans-serif;
     text-align: center;
@@ -29,11 +27,13 @@ input.shape:focus
      outline: none;   
     
 }
+
 input.shape::placeholder
 {
     color: lightgray;
    
 }
+
 input.sub
 {
    width:150px; 
@@ -62,3 +62,23 @@ img.sty
     
 }
 
+button.bsub
+{
+   width:150px; 
+    height:50px;
+    border-radius: 25px; 
+    border: 1.5px solid; 
+    display: block;
+    background-color: white;
+    border-color: gray;
+  margin-left: auto;
+  margin-right: auto;
+    color: gray;
+    outline: none;
+}
+
+button.bsub:hover
+{
+   background-color: gray; 
+    color: white;
+}
