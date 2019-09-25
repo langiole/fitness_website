@@ -8,7 +8,7 @@ import com.collabera.modal.User;
 @Component
 public class UserMapper 
 {
-	public User toEntity(UserDto dto);
+	public User toEntity(UserDTO dto);
 	{
 		User user = new User();
 		user.setUser_id(dto.getUser_id);
