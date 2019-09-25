@@ -18,12 +18,12 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
-    Long user_id;
-    String first_name;
-    String last_name;
-    String email;
-    String password;
-    LocalDate date_registered;
+    private Long user_id;
+    private String first_name;
+    private String last_name;
+    private String email;
+    private String password;
+    private LocalDate date_registered;
 	public Long getUser_id() {
 		return user_id;
 	}
