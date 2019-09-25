@@ -3,7 +3,7 @@ package com.collabera.FeMan.mapper;
 import org.springframework.stereotype.Component;
 
 import com.collabera.FeMan.dto.ExerciseDTO;
-import com.collabera.model.Exercise;
+import com.collabera.FeMan.model.Exercise;
 
 @Component
 public class ExerciseMapper 

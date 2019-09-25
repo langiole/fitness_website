@@ -15,6 +15,7 @@ public class SavedExerciseMapper
 		saved.setId(dto.getId());
 		saved.setUser_id(dto.getUser_id());
 		saved.setExercise_id(dto.getExercise_id());
+		return saved;
 	}
 	
 	public SavedExerciseDTO toDto(SavedExercise entity)
@@ -23,6 +24,7 @@ public class SavedExerciseMapper
 		saved.setId(entity.getId());
 		saved.setUser_id(entity.getUser_id());
 		saved.setExercise_id(entity.getExercise_id());
+		return saved;
 	}
 }
 
