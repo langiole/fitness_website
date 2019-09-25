@@ -4,12 +4,14 @@ import com.collabera.FeMan.dto.ExerciseDTO;
 import com.collabera.FeMan.model.Exercise;
 import com.collabera.FeMan.mapper.ExerciseMapper;
 import com.collabera.FeMan.repository.ExerciseRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
 public class ExerciseService {
     private ExerciseRepository exerciseRepository;
     private ExerciseMapper exerciseMapper;

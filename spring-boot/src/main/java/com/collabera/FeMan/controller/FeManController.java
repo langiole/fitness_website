@@ -17,6 +17,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api")
 public class FeManController {
 
     private UserService userService;
