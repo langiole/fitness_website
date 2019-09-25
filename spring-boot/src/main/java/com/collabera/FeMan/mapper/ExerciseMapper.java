@@ -18,6 +18,7 @@ public class ExerciseMapper
 		exercise.setPrimary(dto.getPrimary());
 		exercise.setSecondary(dto.getSecondary());
 		exercise.setVideo_link(dto.getVideo_link());
+		return exercise;
 	}
 	
 	public ExerciseDTO toDto(Exercise entity)
@@ -29,6 +30,7 @@ public class ExerciseMapper
 		exercise.setPrimary(entity.getPrimary());
 		exercise.setSecondary(entity.getSecondary());
 		exercise.setVideo_link(entity.getVideo_link());
+		return exercise;
 	}
 }
 
