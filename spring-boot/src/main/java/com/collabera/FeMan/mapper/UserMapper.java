@@ -2,40 +2,32 @@ package com.collabera.FeMan.mapper;
 
 import org.springframework.stereotype.Component;
 
-
 import com.collabera.FeMan.dto.UserDTO;
-import com.collabera.FeMan.modal.User;
+import com.collabera.modal.User;
+
 @Component
 public class UserMapper 
 {
-	public User toEntity(UserDto);
+	public User toEntity(UserDto dto);
 	{
 		User user = new User();
-		
+		user.setUser_id(dto.getUser_id);
+		user.setFirst_name(dto.getFirst_name);
+		user.setLast_name(dto.getLast_name);
+		user.setEmail(dto.getEmail);
+		user.setPassword(dto.getPassword);
+		user.setDate_registered(dto.getDate_registered);	
 	}
 	
-}
+	public UserDTO toDto(User entity)
+	{
+		UserDTO user = new UserDTO();
+		user.setUser_id(entity.getUser_id);
+		user.setFirst_name(entity.getFirst_name);
+		user.setLast_name(entity.getLast_name);
+		user.setEmail(entity.getEmail);
+		user.setPassword(entity.getPassword);
+		user.setDate_registered(entity.getDate_registered);
+	}
 	
-		public Movie toEntity(MovieDTO dto) {
-			Movie movie = new Movie();
-			movie.setName(dto.getName());
-			movie.setCategory(dto.getCategory());
-			movie.setPrice(dto.getPrice());
-			movie.setDescription(dto.getDescription());
-			movie.setStudio(dto.getStudioId());
-			movie.setImage(dto.getImage());
-			return movie;
-		}
-
-		public MovieDTO toDto(Movie entity) {
-			MovieDTO movie = new MovieDTO();
-			movie.setMovieId(entity.getId());
-			movie.setName(entity.getName());
-			movie.setCategory(entity.getCategory());
-			movie.setPrice(entity.getPrice());
-			movie.setDescription(entity.getDescription());
-			movie.setStudioId(entity.getStudio());
-			movie.setImage(entity.getImage());
-			return movie;
-		}
 }
