@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+</head>    
+<header>
+    <center><a href= "home.html"><img id="logo" src="images/logo.png" alt="logo"></a></center>
+
+    <div id="sign_in">
+        <a href=sign_in.html style="text-decoration: none"><p style="font-family: sans-serif">SIGN IN</p></a>
+    </div>
+
+</header>
+
+<body>
+    <center style="padding-top: 25px"><h3 style="font-family: sans-serif">BODY PARTS</h3>
+    <table id="table">
+        <tr>
+            <td align="center">
+                <a href="body_part.html?abs"><img class="img-fluid" src="images/abs.png" alt="logo" onmouseover="mouseOver('ABS')" onmouseout="mouseOut('')"></a>
+            </td>
+            <td align="center">
+                <a href= "body_part.html?arms"><img src="images/arms.png" alt="logo" onmouseover="mouseOver('ARMS')" onmouseout="mouseOut('')"></a>
+            </td>
+            <td align="center">
+                <a href= "body_part.html?back"><img src="images/back.png" alt="logo" onmouseover="mouseOver('BACK')" onmouseout="mouseOut('')"></a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <a href= "body_part.html?chest"><img src="images/chest.png" alt="logo" onmouseover="mouseOver('CHEST')" onmouseout="mouseOut('')"></a>
+            </td>
+
+            <td align="center">
+                <a href= "body_part.html?legs"><img src="images/legs.png" alt="logo" onmouseover="mouseOver('LEGS')" onmouseout="mouseOut('')"></a>
+            </td>
+        </tr>
+    </table>
+
+
+    <p id="bodyPart" style="font-family:sans-serif"></p>
+
+    <script>
+        function mouseOver(bodyPart) {
+            document.getElementById("bodyPart").innerHTML = bodyPart;
+        }
+        function mouseOut(bodyPart) {
+            document.getElementById("bodyPart").innerHTML = bodyPart;
+        }
+    </script>
+    </center>
+</body>
+</html>

@@ -1,0 +1,169 @@
+            .logo {
+                width: 150px;
+                height: 150px;
+                transition: 1s;
+                -webkit-transition: 1s;
+            }
+
+            .logo:hover {
+                width: 200px;
+                height: 200px;
+            }
+
+            body {
+                font-family: sans-serif;
+            }
+
+            body h1 {
+                text-align: center;
+                text-transform: capitalize;
+                transition: 1s linear;
+                -webkit-transition: 1s linear;
+            }
+            body h1:hover {
+                text-align: center;
+                transform: skewX(30deg);
+            }
+
+
+            .column {
+                border: solid 3px;
+                box-shadow: 5px 5px 0 #3f403f;
+            }
+
+            .column:active {
+                background-color: black;
+                color: white;
+                box-shadow: 0 0 0;
+            }
+
+            .iframeWrapper {
+                text-align: center;
+                height: 400px;
+            }
+
+            #Descrp-header {
+                background-color: black;
+                color: white;
+                text-align: center;
+                margin-top: auto;
+                padding-top: 10px;
+                padding-bottom: 15px;
+            }
+
+            .column p {
+                font-size: 25px;
+                margin: 10px;
+            }
+            #reps {
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .moreButton {
+                border: solid 2px black;
+                width: 100%;
+                text-align: center;
+                line-height: 2.5 !important;
+                font-size: 1.5rem !important; 
+                text-transform: capitalize;
+                padding-top: 2%;
+                padding-bottom: 2%;
+                color: darkblue;
+                cursor: pointer;
+                transition: all .1s linear;
+            }
+
+            /*.moreButton:hover {
+                background-color: lightgrey;
+
+            }*/
+
+            .moreButton:hover span {
+                position: relative;
+                animation: jump 4s infinite;
+                -webkit-animation: jump 4s infinite;
+            }
+
+            @keyframes jump {
+                0% {top: 0px;}
+                25% {top: -10px;}
+                50% {top: 0px;}
+                75% {top: -10px;}
+                100% {top: 0px;}
+            }
+            @-webkit-keyframes jump {
+                0% {top: 0px;}
+                25% {top: -10px;}
+                50% {top: 0px;}
+                75% {top: -10px;}
+                100% {top: 0px;}
+            }
+
+            .moreButton:active {
+                box-shadow: 0 2px 0 #006599;
+                transform: translateY(3px);
+            }
+
+            .bodyImg {
+                width: 100px;
+                height: 100px;
+            }
+            #moreExerciseBlock{
+                width: 20%;
+            }
+
+            .tableTitle {
+                margin-bottom: 1px;
+                text-transform: capitalize;
+            }
+            /*
+            .input-icons .search-icon {
+                position: absolute;
+            }
+
+            .input-icons {
+                width: 100%;
+            }*/
+
+            .goodBG-color {
+                background-color: #3f403f !important;
+            }
+
+            form {
+                padding: 10px;
+            }
+            
+            .tableStyle {
+                border: solid 2px black;
+                border-collapse: collapse;
+                width: 100%;
+                font-size: 25px;
+            }
+
+            td {
+                border: solid 2px black;
+                background-color: white;
+                padding-left: 1%;
+            }
+
+            td:hover {
+                background-color: darkgrey;
+            }
+
+            td a {
+                width: 100%;
+                display: inline-block;
+                text-decoration: none !important;
+                color: black;
+                position: relative;
+                transition: 1s;
+                -webkit-transition: 1s;
+            }
+
+            td a:hover {
+                transform: translateX(15px)
+            }
+
+            footer{
+                background-color: #2E2E2E;
+            }
