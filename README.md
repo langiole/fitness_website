@@ -1,9 +1,8 @@
 
 # Notice
 
-"Be aware that some differences in operating systems may adjust some files automatically when read by the string tool suite.  Be sure to check your changes carefully before making those pull requests."
+"A suprise is in store for tomorrows presentation..."
 
 # Objective
 
-"Awaiting Some remaining components needed for spring-boot-development branch."
-
+"Finish up your changes and make your pull requests."
