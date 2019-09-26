@@ -6,7 +6,7 @@ let muscle= queries[0].substr(1), index= queries[1];
 if(muscle=="") muscle="abs";
 if(index==null || index=="") index=0;
 
-const pathToJson=`data/${muscle}.json`;         //same as "data/"+ muscle +".json"
+const pathToJson=`http://localhost:8080/api/exercises/${muscle}`;         //same as "data/"+ muscle +".json"
 
 //use jquery's getJSON function to load json file
 if(window.location.pathname == "/body_part.html")
