@@ -19,7 +19,10 @@ public class Exercise implements Serializable {
 	private Long exercise_id;
 	private String name;
 	private String description;
+
+	@Column(name = "primary_muscle")
 	private String primary;
+	@Column(name = "secondary_muscle")
 	private String secondary;
 	private String video_link;
 	public Long getExercise_id() {
