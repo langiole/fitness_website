@@ -1,4 +1,4 @@
-package com.collabera.FeMan;
+package com.collabera.FeMan.repository;
 
 import com.collabera.FeMan.model.Exercise;
 import org.springframework.data.jpa.repository.JpaRepository;
