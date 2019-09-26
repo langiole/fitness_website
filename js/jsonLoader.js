@@ -28,9 +28,9 @@ $.getJSON(pathToJson,exerciseArr=>{
 
 //Manipulate and reload the DOM based on the query passed
 function generateExerciseHTML(exerciseArr){
-    document.getElementById("exerciseTitle").innerText=exerciseArr[muscle][index].Exercise;
-    document.getElementById("descrp").innerText=exerciseArr[muscle][index].Descriptions;
-    document.getElementById("yt_video").setAttribute("src",exerciseArr[muscle][index].link);
+    document.getElementById("exerciseTitle").innerText=exerciseArr[index].name;
+    document.getElementById("descrp").innerText=exerciseArr[index].description;
+    document.getElementById("yt_video").setAttribute("src",exerciseArr[index].video_link);
     document.getElementById("buttonText").innerText=`Show more ${muscle} exercises`;
     document.getElementById("tableTitleId").innerText=`${muscle} Exercises`;
     document.getElementById("dropdownMenu1").innerText=`${muscle}`;
@@ -45,14 +45,14 @@ function generateTable(exerciseArr){
                     let tr= document.createElement("tr");
                     
                     for(let j=0; j<5; j++){
-                       if(!(i <exerciseArr[muscle].length)) break;
+                       if(!(i <exerciseArr.length)) break;
                     
-                        let element=exerciseArr[muscle][i];
+                        let element=exerciseArr[i];
                         let td= document.createElement("td");
                         let a= document.createElement("a");
                         //set the cell link and give it the muscle and id parameters
                         a.href=`?${muscle}&${i}`;
-                        a.innerText = element.Exercise;
+                        a.innerText = element.name;
                         td.appendChild(a);
                         tr.appendChild(td);
                         i++;
@@ -66,18 +66,18 @@ function generateBodyPartTable(exerciseArr){
     let table= document.getElementById("exerTable");
     
     let i=0;
-    while(i <exerciseArr[muscle].length){
+    while(i <exerciseArr.length){
             let tr= document.createElement("tr");
             
             for(let j=0; j<5; j++){
-               if(!(i <exerciseArr[muscle].length)) break;
+               if(!(i <exerciseArr.length)) break;
             
-                let element=exerciseArr[muscle][i];
+                let element=exerciseArr[i];
                 let td= document.createElement("td");
                 let a= document.createElement("a");
                 //set the cell link and give it the muscle and id parameters
                 a.href=`exercise.html?${muscle}&${i}`;
-                a.innerText = element.Exercise;
+                a.innerText = element.name;
                 td.appendChild(a);
                 tr.appendChild(td);
                 i++;
