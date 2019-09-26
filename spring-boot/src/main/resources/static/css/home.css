@@ -1,0 +1,22 @@
+#logo {
+    width:150px;
+    height:150px;
+}
+
+#sign_in {
+    position: relative; 
+    bottom: 150px; 
+    text-align: right; 
+    padding-right: 10px
+}
+
+#table {
+    width:575px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+img {
+    width:100px;
+    height:100px; 
+}
