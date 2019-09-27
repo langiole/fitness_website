@@ -1,3 +1,6 @@
+alter table exercises 
+alter column description text(2000);
+
 INSERT INTO Users (first_name,last_name,email, password, date_registered)
 	Values ('John','Snow','JohnSnow@gmail.com','mypassword', '2019-06-15');
 
