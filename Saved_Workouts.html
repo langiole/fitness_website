@@ -2,14 +2,80 @@
 <head>
  <link rel="stylesheet" type="text/css" href="css/User_Page.css">
         
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">     
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>>
+    
+
+
+
+    <script>
+// initializing jquery when the page is loaded
+//	$(document).ready(
+//        
+//        $(document).ready(function() {
+//		// fetch the movieId from the html text field
+//		var user_id = $("#movieId").val();
+//		// ajax request to get movie by id
+//		$.get("/api/movies/" + movieId, function(data, status) {
+//			if (status === 'success') { // on success of ajax call, set the html text fields with values from API response
+//				$("#movieName").val(data.first_name);
+//				$("#category").val(data.last_name);
+//				$("#description").val(data.email);
+//				$("#studio").val(data.password);
+//				$("#image").val(data.date_registered);
+//				
+//			}
+//		});
+//			function() {
+//				// load the list of movies using ajax API request
+//				$.get("/api//users/1", function(data, status) {
+//					if(status === 'success'){ // when load is successfull, populate the table 
+//						$("#WorkoutTable tbody tr").remove(); // first clear the existing rows. 
+//						$.each(data, function(index, item) { // for each record in the returned list, add a row in the table
+//							$("#WorkoutTable").append(
+//									"<tr><td>" + item.user_id
+//											+ "</td><td>" + item.first_name
+//											+ "</td><td>" + item.last_name
+//											+ "</td><td>" + item.email
+//											+ "</td><td>" + item.password
+//											+ "</td><td>" + item.date_registered
+//											+ "</td><td><a href='/update-movie?id="+item.user_id+"'>Edit</a>" // Edit link
+//											+ "</td><td><a href='javascript: deleteMovie("+item.user_id+")'>Delete</a>" // Delete link
+//											+ "</td></tr>");
+//						});
+//					}
+//				});
+                
+    </script>>
+    
 </head>
     
 <div class = "sidebar">
   <a  href="User_Page.html">Contact Info</a>
   <a class="active" href="#saved_workouts">Saved Workouts</a>
-    </div>        
+    </div>    
+    
+    
 <body>
-  <center>  <a href= "home.html"><img class="sty" src="images/logo.png" alt="our logo"></a>  </center>   
+  <center>  <a href= "home.html"><img class="sty" src="images/logo.png" alt="our logo"></a>  </center> 
+    <div class="container">
+		<table id="WorkoutTable" class="table table-striped">
+			<thead>
+			<!--  table header -->
+				<tr>
+					<th>Movie Id</th>
+					<th>Name</th>
+					<th>Category</th>
+					<th>Description</th>
+					<th>Studio</th>
+					<th>Image</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+    
 </body>
 </html>
