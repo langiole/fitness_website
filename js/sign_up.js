@@ -10,18 +10,7 @@ function validation() {
                 }
                 else {
                     $(document).ready(function() {
-                        const xhr = new XMLHttpRequest();
-                        xhr.open("POST", "http://localhost:8080/api/users");
-                        xhr.setRequestHeader('Content-Type', 'application/json');
-                        xhr.send(JSON.stringify({
-                            "user_id": 3,
-                            "first_name": "Lee",
-                            "last_name": "Angioleyyi",
-                            "email": "SteveWhite@gmail.com",
-                            "password": "mypassword",
-                            "date_registered": "2019-07-10"
-                        }));
-                        /*
+                        
                         $.ajax({
                             url: "http://localhost:8080/api/users",
                             data: JSON.stringify({
@@ -37,7 +26,7 @@ function validation() {
                             success: null,
                             dataType: "json"
                         });
-                        */
+                        
                     });
                     event.preventDefault();
                     event.stopPropagation();
