@@ -1,61 +1,31 @@
-function validatePassword() {
-    var password = document.forms["signupForm"]["Password"];
-    var confirmPassword = document.forms["signupForm"]["cpassword"];
-    if (confirmPassword.value == "") {
-        colorBorder("cpassword", "#ccc");
-        return false;
-    }
-    else if(password.value == confirmPassword.value) { 
-        colorBorder("cpassword", "green");
-        return true;
-    }
-    else {
-        colorBorder("cpassword", "red");
-        return false;
-    }
-}
+function validation() {
+    'use strict';
+    window.addEventListener('load', () => {
+        var forms = document.getElementsByClassName('needs-validation');
+        var validation = [].filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
 
-function colorBorder(name, color) {
-    document.forms["signupForm"][name].style.border = "1.4px solid " + color;
-}
-
-function validateForm() {
-    var form = [document.forms["signupForm"]["First name"],
-                document.forms["signupForm"]["Last name"],
-                document.forms["signupForm"]["Email"],
-                document.forms["signupForm"]["Password"]];
-
-    // check if all inputs are filled out
-    valid = true
-    for (i = 0; i < form.length; i++) {
-        if (form[i].value.trim() == "") {
-            // show error message
-            colorBorder(form[i].name, "red");
-            document.getElementById(form[i].name + " err mssg").style.display = "block";
-            document.getElementById(form[i].name + " err mssg").innerHTML = "Enter " + form[i].name.toLowerCase();
-            valid = false
-        }
-        else {
-            // clear message
-            colorBorder(form[i].name, "#ccc");
-            document.getElementById(form[i].name + " err mssg").style.background = "none";
-            document.getElementById(form[i].name + " err mssg").innerHTML = "";
-        }
-    }
-    
-    if (!valid) { return false; }
-    
-    // check if passwords match
-    if (!validatePassword()) {
-        alert("Passwords must match");
-        return false;
-    }
-    
-    // check if user accepted the terms & conditions
-    if (document.forms["signupForm"]["policy"].checked == false) {
-        alert("Accept the terms and conditions to sign up");
-        return false;
-    }
-    
-    return false;
+    var password = document.getElementsByClassName("password");
+    [].forEach.call(password, (p) => {
+        p.addEventListener('keyup', () => {
+            password[0].parentElement.classList.add("was-validated");
+        });
+        p.addEventListener('keyup', () => {
+            if (password[0].value != password[1].value) {
+                password[1].setCustomValidity("Invalid field.");
+                password[1].parentElement.classList.add("was-validated");
+            }
+            else {
+                password[1].setCustomValidity("");
+            }
+        });
+    });
 }
