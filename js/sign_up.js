@@ -10,11 +10,21 @@ function validation() {
                 }
                 else {
                     $(document).ready(function() {
+
+                        $.ajax({
+                            url: "http://localhost:8080/api/users/2",
+                            success: (data) => {
+                                console.log(data["first_name"]);
+                            },
+                            contentType: "application/json",
+                            type: "GET",
+                            dataType: "json"
+                        });
                         
                         $.ajax({
                             url: "http://localhost:8080/api/users",
                             data: JSON.stringify({
-                                "user_id": 3,
+                            
                                 "first_name": "Lee",
                                 "last_name": "Angioleyyi",
                                 "email": "SteveWhite@gmail.com",
@@ -23,7 +33,6 @@ function validation() {
                             }),
                             contentType: "application/json",
                             type: "POST",
-                            success: null,
                             dataType: "json"
                         });
                         
