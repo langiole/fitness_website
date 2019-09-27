@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Exercise implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "exercise_id")
 	private Long exercise_id;
 	private String name;

@@ -6,7 +6,6 @@ $.getJSON('../data/abs.json',exerciseArr=>{
                 "description": e.Descriptions,
                 "primary": "abs",
                 "video_link": e.link,
-                "exercise_id": 1,
                 "secondary": e.Secondary,
             }),
             contentType : 'application/json',
