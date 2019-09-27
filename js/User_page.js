@@ -1,7 +1,7 @@
-var currFName = "henderson";
-var currLName = "burgus";
-var currEmail = "mail@mail.com";
-var currPassword = "password";
+var currFName = '';
+var currLName = '';
+var currEmail = '';
+var currPassword = '';
 var Nfirst = document.forms["RegForm"]["first"];
 var Nlast = document.forms["RegForm"]["last"];
 var Nmail = document.forms["RegForm"]["NEBox"];
@@ -11,6 +11,7 @@ var NCpass = document.forms["RegForm"]["Opass"];
 
 function CheckMember()
 {
+  
     if(Nfirst.value == "")
     {
        if($("#userAlert").find("div#userbox").length==0){
@@ -99,9 +100,27 @@ if($("#userAlert2").find("div#userbox2").length==0){
   }
   $("#userAlert2").css("display", "");
 document.getElementById("WarnType2").innerHTML = "info updated"; 
-        }
+        
+        $(document).ready(function()
+        {
+             $.ajax({
+                    url: "http://localhost:8080/api/users",
+                    data: JSON.stringify({
+                                        "user_id": 1,
+                                        "first_name": currFName,
+                                        "last_name": currLName,
+                                        "email": currEmail,
+                                        "password": currPassword,        
+                                         }),
+                    contentType: "application/json",
+                    type: "PUT",
+                    success: null,
+                    dataType: "json"
+                    });             
+        });
+            
     }
-
+}
 function conpassvalid()
 {
     if(NCpass.value == "")
@@ -150,11 +169,48 @@ function ShowPass()
 
 function OpenTest()
 {
-    document.getElementById("first").setAttribute("value", currFName);
-    document.getElementById("last").setAttribute("value", currLName);
     
-    document.getElementById("NEBox").setAttribute("value", currEmail);
+    $(document).ready(function()
+    {
+         $.ajax({
+                url: "http://localhost:8080/api/users/1",
+                success: (data) =>{
+                
+                 document.getElementById("first").setAttribute("value", data["first_name"]);
+                 currFName = data["first_name"];
+                document.getElementById("last").setAttribute("value", data["last_name"]);
+                  currLName = data["last_name"];
+                  document.getElementById("NEBox").setAttribute("value", data["email"]);
+                  currEmail = data["email"];
+                 currPassword = data["password"];
+                },
+                contentType: "application/json",
+                type: "GET",
+                dataType: "json"
+                }); 
+
+               
+    });
+              
     
-    
+
+   
+}
+
+function Delete()
+{
+  $(document).ready(function()
+  {
+       $.ajax({
+              url: "http://localhost:8080/api/users/1",
+              data: JSON.stringify({
+                                  "user_id": 1,  
+                                   }),
+              contentType: "application/json",
+              type: "DELETE",
+              success: null,
+              dataType: "json"
+              });             
+  });
 }
 
