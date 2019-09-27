@@ -10,7 +10,7 @@ CREATE TABLE Users(
 CREATE TABLE Exercises(
 	exercise_id int AUTO_INCREMENT PRIMARY KEY,
     name varchar(50) NOT NULL,
-    description varchar(1000) DEFAULT NULL,
+    description text(2000) DEFAULT NULL,
     primary_muscle varchar(50) NOT NULL,
     secondary_muscle varchar(50) DEFAULT NULL,
     video_link varchar(500) DEFAULT NULL    
