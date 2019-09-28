@@ -13,10 +13,20 @@ $.getJSON(`../data/${muscle}.json`,exerciseArr=>{
             contentType : 'application/json',
             type: "POST",
             success: function(data,textStatus,jqXHR){
-                document.getElementById("req").innerHTML=`<h1>Status Code: ${textStatus}</h1> <h2>Data: <br>${JSON.stringify(data)}</h2>`;
+                let div= document.createElement("div");
+                div.className="alert alert-success";
+                div.innerHTML=`<h1>Status Code: <strong>${textStatus}</strong></h1>`;
+                let h2=document.createElement("h2");
+                h2.innerHTML=`<h2>Data: <br>${JSON.stringify(data)}</h2>`;
+                document.getElementById("req").appendChild(div);
+                document.getElementById("req").appendChild(h2);
+
             },
             error: function(jqXHR,textStatus,error){
-                document.getElementById("req").innerText=`<h1>Status Code: ${textStatus}</h1> <h1>Error: <br>${error}</h1>`;
+                let div= document.createElement("div");
+                div.className="alert alert-success";
+                div.innerHTML=`<div class="alert alert-danger"><h1>Status Code: <strong${textStatus}</strong> <h1>Error: <br>${error}</h1></h1></div>`;
+                document.getElementById("req").appendChild(div);
             }
         } 
         );
@@ -26,5 +36,12 @@ $.getJSON(`../data/${muscle}.json`,exerciseArr=>{
 //array of all the muscles we have data on
 let muscle=["abs","arms","chest","back","legs"];
 
-//Iterate each muscle and calling the postMuscle() to make a post request for all the exercises
-muscle.forEach(e=> postMuscle(e));
+//Iterate each muscle and creating a button for each that calls the postMuscle() to make a post request for all the exercises
+muscle.forEach(e=> {
+    let button= document.createElement("button");
+    button.type="button";
+    button.className="btn btn-primary mx-3";
+    button.innerText=e;
+    button.onclick=()=>postMuscle(e);
+    document.getElementById("btns").appendChild(button);
+});
