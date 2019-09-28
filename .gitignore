@@ -5,6 +5,7 @@ HELP.md
 !**/src/main/**
 !**/src/test/**
 .DS_Store
+.class
 
 ### STS ###
 .apt_generated
