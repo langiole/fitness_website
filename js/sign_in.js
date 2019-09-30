@@ -29,7 +29,21 @@ document.getElementById("WarnType").innerHTML = "password incorect";
         }
         else
         {
-          window,location.href = 'home.html'
+          $(document).ready(function() {
+            $.ajax({
+                url: "http://localhost:8080/api/login",
+                data: JSON.stringify({
+                    "email" : name.value,
+                    "password" : pasname.value
+                }),
+                contentType: "application/json",
+                type: "POST",
+                success: function(body) {
+                    document.cookie = "sesion_id=" + body;
+                }
+            });
+          });
+         // window.location.href = 'home.html'
         }
 }
 
