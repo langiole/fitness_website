@@ -1,36 +1,35 @@
 //make post request to our api for each exercise in muscle.json
 function postMuscle(muscle){
-$.getJSON(`../data/${muscle}.json`,exerciseArr=>{
-    exerciseArr[`${muscle}`].forEach(e => {
-        $.ajax("http://localhost:8080/api/exercises",{
-            data: JSON.stringify({
-                "name": e.Exercise,
-                "description": e.Descriptions,
-                "primary": `${muscle}`,
-                "video_link": e.link,
-                "secondary": e.Secondary,
-            }),
-            contentType : 'application/json',
-            type: "POST",
-            success: function(data,textStatus,jqXHR){
-                let div= document.createElement("div");
-                div.className="alert alert-success";
-                div.innerHTML=`<h1>Status Code: <strong>${textStatus}</strong></h1>`;
-                let h2=document.createElement("h2");
-                h2.innerHTML=`<h2>Data: <br>${JSON.stringify(data)}</h2>`;
-                document.getElementById("req").appendChild(div);
-                document.getElementById("req").appendChild(h2);
+    $.getJSON(`../data/${muscle}.json`,exerciseArr=>{
+        exerciseArr[`${muscle}`].forEach(e => {
+            $.ajax("http://localhost:8080/api/exercises",{
+                data: JSON.stringify({
+                    "name": e.Exercise,
+                    "description": e.Descriptions,
+                    "primary": `${muscle}`,
+                    "video_link": e.link,
+                    "secondary": e.Secondary,
+                }),
+                contentType : 'application/json',
+                type: "POST",
+                success: function(data,textStatus,jqXHR){
+                    let div= document.createElement("div");
+                    div.className="alert alert-success";
+                    div.innerHTML=`<h1>Status Code: <strong>${textStatus}</strong></h1>`;
+                    let h5=document.createElement("h5");
+                    h2.innerHTML=`<h2>Data: <br>${JSON.stringify(data)}</h2>`;
+                    document.getElementById("req").appendChild(div);
+                    document.getElementById("req").appendChild(h5);
 
-            },
-            error: function(jqXHR,textStatus,error){
-                let div= document.createElement("div");
-                div.className="alert alert-success";
-                div.innerHTML=`<div class="alert alert-danger"><h1>Status Code: <strong${textStatus}</strong> <h1>Error: <br>${error}</h1></h1></div>`;
-                document.getElementById("req").appendChild(div);
-            }
-        } 
-        );
-          });
+                },
+                error: function(jqXHR,textStatus,error){
+                    let div= document.createElement("div");
+                    div.className="alert alert-success";
+                    div.innerHTML=`<div class="alert alert-danger"><h1>Status Code: <strong${textStatus}</strong> <h3>Error: <br>${error}</h3></h1></div>`;
+                    document.getElementById("req").appendChild(div);
+                }
+            });
+        });
     });
 }
 //array of all the muscles we have data on
