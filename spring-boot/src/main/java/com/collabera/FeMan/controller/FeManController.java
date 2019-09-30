@@ -3,18 +3,28 @@ package com.collabera.FeMan.controller;
 import com.collabera.FeMan.dto.ExerciseDTO;
 import com.collabera.FeMan.dto.UserDTO;
 import com.collabera.FeMan.model.Exercise;
+import com.collabera.FeMan.model.Session;
 import com.collabera.FeMan.model.User;
 import com.collabera.FeMan.service.ExerciseService;
+import com.collabera.FeMan.service.SessionService;
 import com.collabera.FeMan.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.AlternativeJdkIdGenerator;
+import org.springframework.util.IdGenerator;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api")
@@ -22,11 +32,39 @@ public class FeManController {
 
     private UserService userService;
     private ExerciseService exerciseService;
+    private SessionService sessionService;
 
     @Autowired
-    public FeManController(UserService userService, ExerciseService exerciseService) {
+    public FeManController(UserService userService, ExerciseService exerciseService, SessionService sessionService) {
         this.userService = userService;
         this.exerciseService = exerciseService;
+        this.sessionService = sessionService;
+    }
+
+    @GetMapping("/sessions")
+    public List<Session> getSessions() {
+        return sessionService.findAll();
+    }
+
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
+    @PostMapping("/login")
+    public ResponseEntity<String> generateSession(@RequestBody Map<String, String> loginForm, HttpServletResponse response) {
+        UserDTO user = userService.findUserByEmail(loginForm.get("email"));
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body("Invalid email");
+        }
+        if (!loginForm.get("password").equals(user.getPassword())) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body("Invalid password");
+        }
+        String session_id = sessionService.generateSession(user.getUser_id());
+        return ResponseEntity.ok(session_id);
+    }
+
+    @GetMapping("/users")
+    public List<UserDTO> get() {
+        return userService.getUsers();
     }
 
     @GetMapping("/users/{id}")
