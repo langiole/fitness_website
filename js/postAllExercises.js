@@ -12,26 +12,32 @@ function postMuscle(muscle){
                 }),
                 contentType : 'application/json',
                 type: "POST",
-                success: function(data,textStatus,jqXHR){
-                    let div= document.createElement("div");
-                    div.className="alert alert-success";
-                    div.innerHTML=`<h1>Status Code: <strong>${textStatus}</strong></h1>`;
-                    let h5=document.createElement("h5");
-                    h2.innerHTML=`<h2>Data: <br>${JSON.stringify(data)}</h2>`;
-                    document.getElementById("req").appendChild(div);
-                    document.getElementById("req").appendChild(h5);
-
-                },
-                error: function(jqXHR,textStatus,error){
-                    let div= document.createElement("div");
-                    div.className="alert alert-success";
-                    div.innerHTML=`<div class="alert alert-danger"><h1>Status Code: <strong${textStatus}</strong> <h3>Error: <br>${error}</h3></h1></div>`;
-                    document.getElementById("req").appendChild(div);
-                }
+                complete: success_func,
+                error: error_func
             });
         });
     });
 }
+//if request is successfull, notify the user
+function success_func(data,textStatus,jqXHR){
+    let div= document.createElement("div");
+    div.className="alert alert-success";
+    div.innerHTML=`<h1>Status Code: <strong>${textStatus}</strong></h1>`;
+    let h5=document.createElement("h5");
+    h5.innerHTML=`<h2>Data: <br>${JSON.stringify(data)}</h2>`;
+    document.getElementById("req").appendChild(div);
+    document.getElementById("req").appendChild(h5);
+
+}
+
+//if request is unsuccessfull, notify the user
+function error_func(jqXHR,textStatus,error){
+    let div= document.createElement("div");
+    div.className="alert alert-success";
+    div.innerHTML=`<div class="alert alert-danger"><h1>Status Code: <strong${textStatus}</strong> <h3>Error: <br>${error}</h3></h1></div>`;
+    document.getElementById("req").appendChild(div);
+}
+//------------------ START OF SCRIPT--------------------------------------------------------------------------------------
 //array of all the muscles we have data on
 let muscle=["abs","arms","chest","back","legs"];
 
