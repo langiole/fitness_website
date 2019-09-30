@@ -46,7 +46,6 @@ public class FeManController {
         return sessionService.findAll();
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping("/login")
     public ResponseEntity<String> generateSession(@RequestBody Map<String, String> loginForm, HttpServletResponse response) {
         UserDTO user = userService.findUserByEmail(loginForm.get("email"));
@@ -67,14 +66,15 @@ public class FeManController {
         return userService.getUsers();
     }
 
-    @GetMapping("/users/{id}")
-    public ResponseEntity<UserDTO> get(@PathVariable Long id) {
+    @GetMapping("/users/{session_id}")
+    public ResponseEntity<UserDTO> get(@PathVariable String session_id) {
+        Long id = sessionService.findUserId(session_id);
         UserDTO user = userService.findUser(id);
         return ResponseEntity.ok(user);
     }
 
     @GetMapping("/exercises/{body_part}")
-    public List<ExerciseDTO> get(@PathVariable String body_part) {
+    public List<ExerciseDTO> getTargetExercises(@PathVariable String body_part) {
         return exerciseService.getExercisesByBodyPart(body_part);
     }
 

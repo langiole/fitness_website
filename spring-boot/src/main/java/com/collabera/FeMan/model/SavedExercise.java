@@ -19,7 +19,7 @@ public class SavedExercise implements Serializable {
     private Long id;
     private Long user_id;
     private Long exercise_id;
-    
+
 	public Long getId() {
 		return id;
 	}
