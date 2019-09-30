@@ -167,13 +167,20 @@ function ShowPass()
   }
 }
 
+function getCookie(name) {
+  function escape(s) { return s.replace(/([.*+?\^${}()|\[\]\/\\])/g, '\\$1'); };
+  var match = document.cookie.match(RegExp('(?:^|;\\s*)' + escape(name) + '=([^;]*)'));
+  return match ? match[1] : null;
+}
+
+
 function OpenTest()
 {
     
     $(document).ready(function()
     {
          $.ajax({
-                url: "http://localhost:8080/api/users/1",
+                url: "http://localhost:8080/api/users/" + document.cookie.substring(10),
                 success: (data) =>{
                 
                  document.getElementById("first").setAttribute("value", data["first_name"]);
@@ -202,12 +209,10 @@ function Delete()
   $(document).ready(function()
   {
        $.ajax({
-              url: "http://localhost:8080/api/users/1",
-              data: JSON.stringify({
-                                  "user_id": 1,  
-                                   }),
+              url: "http://localhost:8080/api/users/" + document.cookie.substring(10),
               contentType: "application/json",
               type: "DELETE",
+              data: {},
               success: null,
               dataType: "json"
               });             
