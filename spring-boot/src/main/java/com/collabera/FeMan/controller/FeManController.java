@@ -102,8 +102,9 @@ public class FeManController {
         return ResponseEntity.ok().body(result);
     }
 
-    @DeleteMapping("/users/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+    @DeleteMapping("/users/{session_id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable String session_id) {
+        Long id = sessionService.findUserId(session_id);
         userService.deleteUser(id);
         return ResponseEntity.ok().build();
     }
