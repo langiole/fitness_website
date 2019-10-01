@@ -1,91 +1,52 @@
-$.getJSON('../data/abs.json',exerciseArr=>{
-    exerciseArr["abs"].forEach(e => {
-        $.ajax("http://localhost:8080/api/exercises",{
-            data: JSON.stringify({
-                "name": e.Exercise,
-                "description": e.Descriptions,
-                "primary": "abs",
-                "video_link": e.link,
-                "exercise_id": 1,
-                "secondary": e.Secondary,
-            }),
-            contentType : 'application/json',
-            type: "POST",
-            success: function(data,textStatus,jqXHR){
-                document.getElementById("req").innerHTML=`<h1>Status Code: ${textStatus}</h1> <h2>Data: <br>${JSON.stringify(data)}</h2>`;
-            },
-            error: function(jqXHR,textStatus,error){
-                document.getElementById("req").innerText=`<h1>Status Code: ${textStatus}</h1> <h1>Error: <br>${error}</h1>`;
-            }
-        } 
-        );
-          });
+//make post request to our api for each exercise in muscle.json
+function postMuscle(muscle){
+    $.getJSON(`../data/${muscle}.json`,exerciseArr=>{
+        exerciseArr[`${muscle}`].forEach(e => {
+            $.ajax("http://localhost:8080/api/exercises",{
+                data: JSON.stringify({
+                    "name": e.Exercise,
+                    "description": e.Descriptions,
+                    "primary": `${muscle}`,
+                    "video_link": e.link,
+                    "secondary": e.Secondary,
+                }),
+                contentType : 'application/json',
+                type: "POST",
+                complete: success_func,
+                error: error_func
+            });
+        });
     });
-/*
-$.ajax(url, {
-    data : JSON.stringify(myJSObject),
-    contentType : 'application/json',
-    type : 'POST',
-$.getJSON('../data/chest.json',exerciseArr=>{
-    exerciseArr["chest"].forEach(e => {
-        $.post("http://localhost:8080/api/exercises", 
-        {
-            name: e.Exercise,
-            description: e.Descriptions,
-            primary_muscle: "chest",
-            secondary_muscle: e.Secondary,
+}
+//if request is successfull, notify the user
+function success_func(data,textStatus,jqXHR){
+    let div= document.createElement("div");
+    div.className="alert alert-success";
+    div.innerHTML=`<h1>Status Code: <strong>${textStatus}</strong></h1>`;
+    let h5=document.createElement("h5");
+    h5.innerHTML=`<h2>Data: <br>${JSON.stringify(data)}</h2>`;
+    document.getElementById("req").appendChild(div);
+    document.getElementById("req").appendChild(h5);
 
+}
 
-        },(data, status)=>{
-            alert("Data: " + data + "\nStatus: " + status);
-          })
-    });
+//if request is unsuccessfull, notify the user
+function error_func(jqXHR,textStatus,error){
+    let div= document.createElement("div");
+    div.className="alert alert-success";
+    div.innerHTML=`<div class="alert alert-danger"><h1>Status Code: <strong${textStatus}</strong> <h3>Error: <br>${error}</h3></h1></div>`;
+    document.getElementById("req").appendChild(div);
+}
+//------------------ START OF SCRIPT--------------------------------------------------------------------------------------
+//array of all the muscles we have data on
+let muscle=["abs","arms","chest","back","legs"];
+
+//Iterate each muscle and creating a button for each that calls the postMuscle() to make a post request for all the exercises
+muscle.forEach(e=> {
+    let button= document.createElement("button");
+    button.type="button";
+    button.className="btn btn-primary mx-3";
+    button.innerText=e;
+    button.onclick=()=>postMuscle(e);
+    document.getElementById("btns").appendChild(button);
 });
-
-$.getJSON('../data/arms.json',exerciseArr=>{
-    exerciseArr["arms"].forEach(e => {
-        $.post("http://localhost:8080/api/exercises", 
-        {
-            name: e.Exercise,
-            description: e.Descriptions,
-            primary_muscle: "arms",
-            secondary_muscle: e.Secondary,
-
-
-        },(data, status)=>{
-            alert("Data: " + data + "\nStatus: " + status);
-          })
-    });
-});
-
-$.getJSON('../data/back.json',exerciseArr=>{
-    exerciseArr["back"].forEach(e => {
-        $.post("http://localhost:8080/api/exercises", 
-        {
-            name: e.Exercise,
-            description: e.Descriptions,
-            primary_muscle: "back",
-            secondary_muscle: e.Secondary,
-
-
-        },(data, status)=>{
-            alert("Data: " + data + "\nStatus: " + status);
-          })
-    });
-});
-
-$.getJSON('../data/legs.json',exerciseArr=>{
-    exerciseArr["legs"].forEach(e => {
-        $.post("http://localhost:8080/api/exercises", 
-        {
-            name: e.Exercise,
-            description: e.Descriptions,
-            primary_muscle: "legs",
-            secondary_muscle: e.Secondary,
-
-
-        },(data, status)=>{
-            alert("Data: " + data + "\nStatus: " + status);
-          })
-    });
-});*/
