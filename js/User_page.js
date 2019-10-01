@@ -196,7 +196,7 @@ function OpenTest()
                  currUserId = data["user_id"];
                   console.log(data["date_registered"][0]);
                   var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                  var date = new Date(data["date_registered"][0], data["date_registered"][1], data["date_registered"][2]);
+                  var date = new Date(data["date_registered"][0], data["date_registered"][1] - 1, data["date_registered"][2]);
                  document.getElementById("member_since").innerHTML = "Member since: " + date.toLocaleDateString("en-US", options);
                 },
                 contentType: "application/json",
