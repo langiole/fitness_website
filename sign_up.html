@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
     <title>FeMan - Sign up</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,71 +32,44 @@
     </nav> 
   </header>
 <body>
-    <div style="margin-top: 10%" class="contain">
-        <div class="wrapper">
-            <div class="form">
-                <h2 align=center>Sign Up</h2>
-                <form name="signupForm" action="home.html" onsubmit="return validateForm();">
-                    <p><input type="text" name="First name" placeholder="First Name"></p>
-                    
-                    
-                    <p><input name="Last name" type="text" placeholder="Last Name"></p>
-                    
-                    <center id="First name err mssg" class="errormssg">Enter first name</center>
-                    
-                    <center id="Last name err mssg" class="errormssg">Enter last name</center>
-                    
-                    <br>
-                    
-                    <p class="full-width"><input type="text" name="Email" placeholder="Email"><center id="Email err mssg" class="full-width errormssg">Enter email address</center></p>
-                    
-                    
-                    
-                    <br>
-                    
-                    <p class="full-width"><input onkeyup="validatePassword()" type="password" name="Password" placeholder="Password"><center id="Password err mssg" class="full-width errormssg">Enter password</center></p>
-                    
-                   
-    
-                    
-                    <br>
-                    
-                    <p class="full-width"><input onkeyup="validatePassword()" type="password" name="cpassword" placeholder="Confirm Password"></p>
-                    
-                    
-    
-                    
-                    <br>
-                    
-                    <p class="full-width"><input type="checkbox" name="policy">
-                    <label style="font-size: 10px; color: gray; position: relative; text-align: center; bottom: 15px; right: 40px" for="policy">I accept the Terms of Use & Privacy Policy</label>
-                    </p>
-                    
-                    <p class="full-width"><input type="submit" value="Submit"></p>
-                </form>
+<div class="container-fluid mt-5">
+    <form class="needs-validation" action="home.html" novalidate>
+        <div class="form-row justify-content-center">
+            <div class="col-sm-3 mb-3">
+                <input type="text" class="form-control" placeholder="First name" required>
+                <div class="invalid-feedback">Enter first name</div>
+            </div>
+            
+            <div class="col-sm-3 mb-3">
+                <input type="text" class="form-control" placeholder="Last name" required>
+                <div class="invalid-feedback">Enter last name</div>
             </div>
         </div>
-    </div>
-
+        <div class="form-row justify-content-center">
+		    <div class="col-sm-6 mb-3">
+                <input type="email" class="form-control" placeholder="Email" required>
+                <div class="invalid-feedback">Enter valid email</div>
+            </div>
+        </div>
+        <div class="form-row justify-content-center">
+		    <div class="col-sm-6 mb-3">
+                <input type="password" class="form-control password" placeholder="Password" pattern=".{8,}" required>
+                <div class="invalid-feedback">Enter at least 8 characters</div>
+            </div>
+        </div>
+        <div class="form-row justify-content-center">
+		    <div class="col-sm-6 mb-3">
+                <input type="password" class="form-control password" placeholder="Confirm password" required>
+                <div class="invalid-feedback">Passwords don't match</div>
+            </div>
+        </div>
+        <div class="form-row justify-content-center">
+            <button type="submit" class="btn btn-outline-primary px-5">Submit</button>
+        </div>     
+</form>
+</div>
 <script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
+    document.onload = validation();
 </script>
     
     
