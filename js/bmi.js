@@ -4,6 +4,7 @@ function bmi() {
     var mass = document.forms["formBMI"]["mass"].value;
     var height = (inch * 1.0) + (12 * ft);
     var bmiPrime = (703.0/25.0) * (mass / (height * height));
+
     var bmiNum = bmiPrime * 25.0;
 
     if(bmiPrime < .60){

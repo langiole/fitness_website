@@ -13,7 +13,7 @@ if(window.location.pathname == "/body_part.html")
     $.getJSON(pathToJson,exerciseArr=>{
         //wait for the DOM to load
         $(document).ready(function(){
-            // generateExerciseHTML(exerciseArr);
+            generateBodyPartHTML(exerciseArr);
             generateBodyPartTable(exerciseArr);
         });
     });
@@ -36,12 +36,18 @@ function generateExerciseHTML(exerciseArr){
     document.getElementById("dropdownMenu1").innerText=`${muscle}`;
 }
 
+function generateBodyPartHTML(exerciseArr){
+    document.getElementById("bdimg").setAttribute("src",`./images/${muscle}.png`);
+    document.getElementById("tableTitleId").innerText=`${muscle} Exercises`;
+    document.getElementById("dropdownMenu1").innerText=`${muscle}`;
+}
+
 //Dynamically manipulate the table in our DOM
 function generateTable(exerciseArr){
             let table= document.getElementById("exerTable");
             
             let i=0;
-            while(i <exerciseArr[muscle].length){
+            while(i <exerciseArr.length){
                     let tr= document.createElement("tr");
                     
                     for(let j=0; j<5; j++){
