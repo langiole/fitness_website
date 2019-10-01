@@ -9,6 +9,9 @@ function validation() {
                     event.stopPropagation();
                 }
                 else {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    
                     var requestBody = {};
                     var today = new Date();
                     var inputs = document.getElementsByClassName("form-control");
@@ -34,6 +37,7 @@ function validation() {
                                     type: "POST",
                                     success: function(body) {
                                         document.cookie = "sesion_id=" + body;
+                                        window.location.href = 'home.html';
                                     }
                                 });
                             },
