@@ -37,11 +37,14 @@ function validation() {
                                     }
                                 });
                             },
+                            error: function(body) {
+                                $('#emailExistsAlert').show();
+                            },
                             dataType: "json"
                         });
                     });
-                    event.preventDefault();
-                    event.stopPropagation();
+                    // event.preventDefault();
+                    // event.stopPropagation();
                 }
                 form.classList.add('was-validated');
             }, false);

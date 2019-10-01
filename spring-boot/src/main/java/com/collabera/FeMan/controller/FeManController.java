@@ -79,7 +79,10 @@ public class FeManController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<UserDTO> create(@RequestBody @Valid UserDTO user) throws URISyntaxException {
+    public ResponseEntity create(@RequestBody @Valid UserDTO user) throws URISyntaxException {
+        if (userService.findUserByEmail(user.getEmail()) != null) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Email is already registered!");
+        }
         UserDTO result = userService.createUser(user);
         return ResponseEntity.created(new URI("/users" + result.getUser_id())).body(result);
     }
