@@ -5,6 +5,7 @@ HELP.md
 !**/src/main/**
 !**/src/test/**
 .DS_Store
+.class
 
 ### STS ###
 .apt_generated
@@ -31,5 +32,9 @@ build/
 
 ### VS Code ###
 .vscode/
+<<<<<<< HEAD
 spring-boot/target/classes/META-INF/MANIFEST.MF
 spring-boot/target/classes/application.properties
+=======
+*.class
+>>>>>>> 080634265ad078d2882e5f0fbd838dc7959e9249

@@ -70,14 +70,28 @@
         
             <p id="bodyPart" style="font-family:sans-serif"></p>
         
-            <script>
-                function mouseOver(bodyPart) {
-                    document.getElementById("bodyPart").innerHTML = bodyPart;
-                }
-                function mouseOut(bodyPart) {
-                    document.getElementById("bodyPart").innerHTML = bodyPart;
-                }
-            </script>
+               <script>
+        function mouseOver(bodyPart) {
+            document.getElementById("bodyPart").innerHTML = bodyPart;
+        }
+        function mouseOut(bodyPart) {
+            document.getElementById("bodyPart").innerHTML = bodyPart;
+        }
+        if (document.cookie != "") {
+            $(document).ready(function() {
+                $.ajax({
+                    url: "http://localhost:8080/api/users/" + document.cookie.substr(10),
+                    contentType: "application/json",
+                    type: "GET",
+                    success: function(body) {
+                        document.getElementById("profile_btn_p").innerHTML = body["first_name"];
+                        document.getElementById("profile_btn_a").setAttribute("href", "User_page.html");
+                    },
+                    dataType: "json"
+                });
+            });
+        }
+    </script>
             </center>
 </div>
 </body>

@@ -5,13 +5,13 @@ public class SavedExerciseDTO
  private Long id;
  private Long user_id;
  private Long exercise_id;
- 
-public Long getId() 
+
+public Long getId()
 {
 	return id;
 }
 
-public void setId(Long id) 
+public void setId(Long id)
 {
 	this.id = id;
 }
