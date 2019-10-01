@@ -42,7 +42,7 @@ function validation() {
                                 });
                             },
                             error: function(body) {
-                                $('#emailExistsAlert').show();
+                                $('#emailExistsAlert').removeClass("hidden");
                             },
                             dataType: "json"
                         });
