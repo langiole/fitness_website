@@ -2,12 +2,15 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/home.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>    
 <header>
     <center><a href= "home.html"><img id="logo" src="images/logo.png" alt="logo"></a></center>
 
-    <div id="sign_in">
-        <a href=sign_in.html style="text-decoration: none"><p style="font-family: sans-serif">SIGN IN</p></a>
+    <div id="profile_btn">
+        <a id="profile_btn_a" href=sign_in.html style="text-decoration: none"><p id="profile_btn_p" style="font-family: sans-serif">SIGN IN</p></a>
     </div>
 
 </header>
@@ -39,6 +42,7 @@
 
 
     <p id="bodyPart" style="font-family:sans-serif"></p>
+    </center>
 
     <script>
         function mouseOver(bodyPart) {
@@ -47,12 +51,21 @@
         function mouseOut(bodyPart) {
             document.getElementById("bodyPart").innerHTML = bodyPart;
         }
-        
-        var b = document.cookie.match('(^|[^;]+)\\s*' + "session_id" + '\\s*=\\s*([^;]+)');
-        var session_id = b ? b.pop() : '';
-        console.log(document.cookie);
-        console.log("yo");
+        if (document.cookie != "") {
+            $(document).ready(function() {
+                $.ajax({
+                    url: "http://localhost:8080/api/users/" + document.cookie.substr(10),
+                    contentType: "application/json",
+                    type: "GET",
+                    success: function(body) {
+                        document.getElementById("profile_btn_p").innerHTML = body["first_name"];
+                        document.getElementById("profile_btn_a").setAttribute("href", "User_page.html");
+                    },
+                    dataType: "json"
+                });
+            });
+        }
     </script>
-    </center>
+    
 </body>
 </html>
