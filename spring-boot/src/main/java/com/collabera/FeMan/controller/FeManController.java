@@ -109,6 +109,7 @@ public class FeManController {
         return ResponseEntity.ok().build();
     }
 
+    @CrossOrigin(origins="http://127.0.0.1:5500")
     @DeleteMapping("/exercises/{id}")
     public ResponseEntity<Void> deleteExercise(@PathVariable Long id) {
         exerciseService.deleteExercise(id);
