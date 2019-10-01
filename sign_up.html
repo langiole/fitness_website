@@ -34,16 +34,21 @@
   </header>
 <body>
 
-<div id="emailExistsAlert" class="alert alert-danger alert-dismissible fade show" role="alert" style="position: absolute; top: 0;">
-    <strong>Error!</strong> Email is already registered!
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-    </button>
-</div>
+
 
 <div class="container-fluid mt-5">
+
+        
     
     <form class="needs-validation" action="home.html" novalidate>
+        <div class="form-row justify-content-center hidden" id="emailExistsAlert">
+            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert" >
+                <strong>Error!</strong> Email is already registered!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
         <div class="form-row justify-content-center">
             <div class="col-sm-3 mb-3">
                 <input type="text" name="first_name" class="form-control" placeholder="First name" required>
@@ -82,7 +87,6 @@
 <script src="js/sign_up.js"></script>
 <script>
     document.onload = validation();
-    $('#emailExistsAlert').hide();
 </script>
     
     
