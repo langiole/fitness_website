@@ -1,0 +1,40 @@
+**/.DS_Store
+HELP.md
+**/target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+.DS_Store
+.class
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+<<<<<<< HEAD
+spring-boot/target/classes/META-INF/MANIFEST.MF
+spring-boot/target/classes/application.properties
+=======
+*.class
+>>>>>>> 080634265ad078d2882e5f0fbd838dc7959e9249

@@ -232,3 +232,6 @@
             td a:hover {
                 transform: translateX(15px)
             }
+            footer{
+                background-color: #2E2E2E;
+            }
